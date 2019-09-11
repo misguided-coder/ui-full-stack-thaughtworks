@@ -22,16 +22,58 @@
 		/* ul li:last-child { color:orange } */
 		/* ul li:nth-child(even) { color:orange } */
 		/* ul li:nth-child(odd) { color:orange } */
-		   li:nth-child(2) { color:orange }
-		    
+		   li:not(:nth-child(2)) { color:orange }
+
+		/* relational selector */
+		footer h1 { color:pink }
+		footer > h1 { color:green }
+		#article0 + article { background-color:gray }
+
+		/* multiple selector */
+		header,footer,#article0 { background-color:gray }
+
+		/* filtering selector */
+		article#article0 { border:1px solid violet}			
+		div.animal { border:4px solid red}
+	
+		/* pseduo selector */
+		a:hover { color:white }			
+
+		/* attribute based selector */
+		/* input[type=text] { border:2px dashed lightblue;margin-right:40px } */  	
+		/* input[type=text][value='Hi Bye'] { border:2px dashed lightblue;margin-right:40px }  */  	
+		/* input[value='Hi Bye'] { border:2px dashed lightblue;margin-right:40px } */
+		/* input[value^='Hello'] { border:2px dashed blue;margin-right:40px } */
+		/* input[value$='Go'] { border:2px dashed blue;margin-right:40px } */
+		/* input[value*='Bye'] { border:2px dashed blue;margin-right:40px } */
+		/* input[value=''] { border:2px dashed blue;margin-right:40px } */
+		/* input[value] { border:2px dashed blue;margin-right:40px } */
+		 input[type=checkbox]:checked { border:2px dashed blue;margin-right:40px }
+ 	
 	</style>
 </head>
 <body>
 	<header>
 		<h1>Welcome To Beautiful World</h1>
+		<a href=#>Login</a>
 	</header>
 	<main>
 		<article>
+			Enter Value :<input type=text value='Hello Hi Bye Go' /><br/>
+			Enter Value :<input type=text value='Bye Go' /><br/>
+			Enter Value :<input type=text value='Hello Hi' /><br/>
+			Enter Value :<input type=text value='Hi Bye' /><br/>
+			Enter Value :<input type=text value='' /><br/>
+			Enter Value :<input type=text  /><br/>
+			Hobbies  : 
+			<input type=checkbox value='S' />Sleeping
+			<input type=checkbox value='D' />Dreaming
+			<input type=checkbox value='W' checked />Walking
+			<input type=checkbox value='E' />Eating
+			<br/>
+		</article>
+		
+		<article id='article0'>
 			<h2>Animals</h2>
 			<section>
 				<div>Animals are part of our life.</div>
@@ -65,5 +107,11 @@
 			</section>
 		</article>
 	</main>
+	<footer>
+		<h1>Read our polities and terms before continue.</h1>
+		<div>
+			<h1>Follow Us</h1>
+		</div>
+	</footer>
 </body>
 </html>
