@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drawing Demo</title>
+</head>
+<body>
+	<header>
+		<h1>Fun with Shapes</h1>
+	</header>
+	<main>
+		<section>
+			<svg width='300px' height='300px' style='border:1px solid gray'>
+				<rect x=20 y=50 width=200 height=100 style="stroke:red;stroke-width:10px;fill:blue;fill-opacity:.20;stroke-opacity:.40" >
+				</rect>	
+			</svg>
+		</section>
+		<section>
+			<canvas id='canvas0' width='400px' height='400px' style='border:1px solid blue;'>
+			</canvas>
+		</section>
+	</main>
+	<script>
+		var canvas0 = document.getElementById('canvas0');		
+		var cxt = canvas0.getContext('2d');
+		
+		cxt.strokeStyle = 'red';
+		cxt.strokeRect(10,10,100,50);
+		
+		cxt.fillStyle = 'yellow';
+		cxt.fillRect(10,110,100,50);
+
+		cxt.beginPath();
+		cxt.moveTo(50,50);
+		cxt.lineTo(200,200);
+		cxt.stroke();
+
+
+		cxt.strokeStyle = 'yellow';
+		cxt.lineWidth=5;
+		cxt.lineCap ='round';
+		cxt.beginPath();
+		cxt.moveTo(300,20);
+		cxt.lineTo(300,200);
+		cxt.stroke();	
+
+	</script>	
+</body>
+</html>

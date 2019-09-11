@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Registration Form</title>
+</head>
+<body>
+	<header>
+		<h1>Welcome To Jungli Zim</h1>
+	</header>
+	<main>
+		<form action='/api/user/create' method='GET' name='userForm' id='userForm'>
+			<label for='userid'>ID : </label><br/>
+			<input type='text' name='userid' value='raj0001' /><br/>
+			<label for='name'>Name : </label><br/>
+			<input type='text' name='name' value='raj' /><br/>
+			<label for='password'>Password : </label><br/>
+			<input type='password' name='password' value='secret' /><br/>
+			<label for='age'>Age : </label><br/>
+			<input type='number' name='age' value='28' /><br/>
+			<label for='dob'>DOB : </label><br/>
+			<input type='date' name='dob' /><br/>
+			<label for='tob'>TOB : </label><br/>
+			<input type='time' name='tob'  /><br/>
+			<label for='gender'>Gender : </label><br/>
+			<input type='radio' name='gender' value='M'  />Male
+			<input type='radio' name='gender' value='F'  />Female<br/>
+			<label for='phone'>Phone : </label><br/>
+			<input type='tel' name='phone' value='98100000111'  /><br/>
+			<label for='email'>Email : </label><br/>
+			<input type='email' name='email' value='raj@gmail.com'  /><br/>
+			<label for='url'>Facebook : </label><br/>
+			<input type='url' name='url' value='http://www.facebook.com/raj'  /><br/>
+			<label for='city'>City : </label><br/>
+			<input type='text' name='city' list='citylist' /><br/>
+			<datalist id='citylist'>
+				<option value='Delhi'>Delhi</option>		
+				<option value='Dhanbad'>Dhanbad</option>		
+				<option value='Dehradun'>Dehradun</option>		
+				<option value='Darzling'>Darzling</option>		
+				<option value='Mumbai'>Mumbai</option>		
+				<option value='Muzaffarnagar'>Muzaffarnagar</option>		
+				<option value='Meerut'>Meerut</option>		
+			</datalist>
+			<label for='weight'>Weight(KG) : </label><br/>
+			<input type='range' name='weight' value='80' /><br/>
+
+			<input type='submit' value='Register' />
+		</form>
+	</main>
+</body>
+</html>

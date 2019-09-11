@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Storage Demo</title>
+</head>
+<body>
+
+<output id='result'></output>
+
+<script>
+	var result = document.getElementById('result');
+	
+	if(window.localStorage) {
+		if(localStorage.getItem("CITY") == undefined) {
+			localStorage.setItem("CITY","Delhi");
+		} else {	
+			var data = localStorage.getItem("CITY");
+			result.innerHTML = 'Hey, We know you live in '+data;	
+		}
+	} else {
+		result.innerHTML = 'Mr Your browser does not support client side stores, better to change the browser ASAP!!';	
+	}
+</script>
+
+</body>
+</html>

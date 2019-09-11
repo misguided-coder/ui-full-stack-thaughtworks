@@ -1,0 +1,33 @@
+CACHE MANIFEST
+# version 2.0.4
+
+CACHE:
+# static pages
+dnd.html
+reg.html
+media.html
+storage.html
+
+# css resources
+css/styles.css
+
+# js resources
+js/main.js
+
+# image files
+images/tw-logo.svg
+
+# media files
+media/Jeene-Laga-Hoon.mp3
+
+NETWORK:
+login.jsp
+order.jsp
+logout.html
+
+
+FALLBACK:
+# catalogue.html product.html
+# home.html offline.html
+
+

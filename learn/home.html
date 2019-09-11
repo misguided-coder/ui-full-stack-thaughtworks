@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html manifest='app-cache.manifest'>
+<head>
+<title>Home Page</title>
+<script>
+	
+	if(window.applicationCache) {
+		switch(applicationCache.status) {
+			case applicationCache.CHECKING:
+				console.log("Browser is checking for cache update on server");
+				break;
+			case applicationCache.DOWNLOADING:
+				console.log("Browser is checking for cache update on server");
+				break;
+			case applicationCache.IDLE:
+				console.log("Browser is checking for cache update on server");
+				break;
+			case applicationCache.UPDTEREADY:
+				console.log("Browser is checking for cache update on server");
+				break;
+			case applicationCache.OBSELETE:
+				console.log("Browser is checking for cache update on server");
+				break;
+			case applicationCache.ERROR:
+				console.log("Browser is checking for cache update on server");
+				break;
+			default:
+				console.log("Cache status in not known");
+		}
+	} else {
+		window.alert("Browser does not support App Cache!!");
+	}
+
+
+	applicationCache.addEventListener('updateready',function(){
+		console.log("Cache update is ready");
+		applicationCache.swapCache();
+	},true);	
+
+	applicationCache.addEventListener('error',function(err){
+		console.log("There is an error in the cache");
+		console.log(err);
+	},true);	
+
+</script>
+</head>
+<body>
+	<header>
+		<h1>Welcome to Fun Zone</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href='dnd.html'>Drag and Drop</a></li>
+			<li><a href='media.html'>Enjoy Media</a></li>
+			<li><a href='reg.html'>Register Yourself</a></li>
+			<li><a href='storage.html'>Learn Storage</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

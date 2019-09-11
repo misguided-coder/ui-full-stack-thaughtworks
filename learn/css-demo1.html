@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Demo</title>
+	<style>
+		/* css syntax */		
+		/* selector { body } */
+		/* selector { property:value;property:value } */
+		
+		/* element selector */
+		div { color:blue }
+		
+		/* id selector */
+		#div0 { color:red }
+
+		/* class selector */
+		.animal { color:yellow }
+
+		/* positional selector */
+		/* ul li:nth-child(2) { color:orange } */
+		/* ul li:first-child { color:orange } */
+		/* ul li:last-child { color:orange } */
+		/* ul li:nth-child(even) { color:orange } */
+		/* ul li:nth-child(odd) { color:orange } */
+		   li:nth-child(2) { color:orange }
+		    
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Welcome To Beautiful World</h1>
+	</header>
+	<main>
+		<article>
+			<h2>Animals</h2>
+			<section>
+				<div>Animals are part of our life.</div>
+				<div id='div0'>Animals also need food and water.</div>
+				<div class='animal'>Animals have life.</div>
+			</section>
+			<section>
+				<div>Animals also sleep like us.</div>
+				<div class='animal'>Animals also walk like us.</div>
+			</section>
+		</article>
+		<article>
+			<h2>Car Wish List</h2>
+			<section>
+				<ul id='car-wish-list'>
+					<li>Jaguar XE</li>
+					<li>Jaguar XF</li>
+					<li>BMW X6</li>
+					<li>BMW X1</li>
+					<li>Merc CLA</li>
+				</ul>
+			</section>
+			<section>
+				<ol id='luxury-car-wish-list'>
+					<li>Jaguar XE</li>
+					<li>Jaguar XF</li>
+					<li>BMW X6</li>
+					<li>BMW X1</li>
+					<li>Merc CLA</li>
+				</ol>
+			</section>
+		</article>
+	</main>
+</body>
+</html>

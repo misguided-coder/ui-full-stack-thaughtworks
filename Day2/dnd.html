@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drag and Drop</title>
+<script>
+	function doStart(evt) {
+		console.log(evt.target.id+' dragging started!!!!!');
+		evt.dataTransfer.setData('text',evt.target.id);
+	}
+
+	function allowDrop(evt) {
+		evt.preventDefault();
+		console.log('Item dragging over : '+evt.target.id);
+	}
+
+	function doDrop(evt) {
+		evt.preventDefault();
+		var item = evt.dataTransfer.getData('text');
+		console.log(item+' dropped to : '+evt.target.id);
+		evt.target.appendChild(document.getElementById(item));			
+	}
+</script>
+</head>
+<body>
+
+	<section style='width:30%;border:2px solid black'>
+		<header>
+			<h2>Items</h2>	
+		</header>
+		<hr/>
+		<h3 id='chicken' draggable='true' ondragstart='doStart(event);' >Chicken</h3>
+		<h3 id='mutton' draggable='true' ondragstart='doStart(event);' >Mutton</h3>
+		<h3 id='fish' draggable='true' ondragstart='doStart(event);' >Fish</h3>
+	</section>
+	<br/>
+	<br/>
+	<section style='width:30%;border:2px solid black;height:300px'>
+		<header>
+			<h2>Tandoor</h2>	
+		</header>
+		<hr/>
+		<div style='width:98%;height:70%;border:1px solid red' id='tandoor' ondragover='allowDrop(event);' ondrop='doDrop(event);'>
+		</div>
+	</section>
+
+</body>
+</html>
