@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Equal Boxes</title>
+	<style>
+		#container {
+			width:90%;
+			height:400px;	
+			border:1px solid #ee00aa;
+			margin:0 auto;	
+		}
+
+		.row {
+			width:90%;
+			height:100px;	
+			border:1px solid #00ff55;
+			margin:10px auto;	
+		}
+
+		.box {
+			height:100%;	
+			border:1px solid #ffaa00;
+		}
+
+		.left,.middle {
+			float:left;
+			margin-left:10px;
+			background-color:#DD00aa;
+		}	
+		
+		.middle {
+			margin-left:15px;
+			background-color:#aaffee;
+		}		
+
+		.right {
+			float:right;
+			margin-right:10px;
+			background-color:#cc3355;
+		}		
+
+		#first .box {
+			width:48%;
+		}
+
+		#second .box {
+			width:31%;
+		}
+			
+	</style>
+</head>
+<body>
+	<header>
+		<h1 class='banner'>Equal Boxes</h1>
+	</header>
+	<div id='container'>
+		<div id='first' class='row'>
+			<div class='box left'>Left Box</div>
+			<div class='box right'>Right Box</div>
+		</div>
+		<div id='second' class='row'>
+			<div class='box left'>Left Box</div>
+			<div class='box middle'>Middle Box</div>
+			<div class='box right'>Right Box</div>
+		</div>
+	</div>
+</body>
+</html>

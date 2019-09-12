@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Demo</title>
+	<style>
+		div.left {
+			border:2px solid red;
+			width:300px;
+			float:left;
+		}
+
+		div.right {
+			border:2px solid red;
+			width:300px;
+			float:right;
+		}
+		
+		.clearfix::after {
+			content:"";
+			clear:both;	
+			display:block;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='left'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='left'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='right'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='right'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='right'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='left'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='left'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='right'>Lets go to Maldivas for 2 year long holidays.</div>
+	<div class='clearfix'></div>	
+	<h1>Holiday Vacations</h1>
+	<h1>Holiday Vacations</h1>
+</body>
+</html>

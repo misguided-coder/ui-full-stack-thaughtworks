@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Demo</title>
+	<style>
+
+		#container {
+			border:2px solid gray;
+			width:400px;
+			height:400px;
+			position:relative;
+		}				
+
+		.box {
+			border:5px solid black;
+			width:100px;
+			height:100px;
+			margin:5px;
+		}
+		
+		.blue {
+			background-color:blue;
+			position:relative;
+			z-index:2;
+			height:200px;
+		}
+
+		.pink {
+			width:200px;
+			height:200px;
+			background-color:pink;
+			position:absolute;
+			top:40px;
+			left:40px;
+			z-index:1;
+		}
+
+		.orange {
+			background-color:orange;
+			position:absolute;
+			top:40px;
+			z-index:999;
+		}
+
+	</style>
+</head>
+<body>
+	<div id='container'>
+		<div class='box blue'>
+		</div>
+		<div class='box pink'>
+		</div>
+		<div class='box orange'>
+		</div>
+	</div>
+</body>
+</html>
