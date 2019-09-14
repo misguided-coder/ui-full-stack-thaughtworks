@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Page</title>
+	<style>
+
+		/* targeting large devices */
+		@media screen and (max-width:1000px) {
+
+			h1 {
+				color:blue
+			}
+		}
+
+		/* targeting medium devices */
+		@media screen and (min-width:600px) and (max-width:800px) {
+
+			h1 {
+				color:magenta
+			}
+		}
+
+
+		/* targeting small devices */
+		@media screen and (max-width:510px) {
+
+			h1 {
+				color:red
+			}
+		}
+
+
+		@media print {
+
+			h1 {
+				font-family:Arial sans-serif;
+				font-size:.6em;
+				color:red
+			}
+		}	
+			
+
+	</style>
+</head>
+<body>
+	<div>
+		<h1>I am a COOL Guy!!</h1>
+	</div>		
+</body>
+</html>

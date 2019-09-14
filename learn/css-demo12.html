@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Demo</title>
+	<style>
+
+		.box {
+			border:1px dotted gray;
+			width:100px;
+			height:100px;
+			background-color:rgba(100,0,220,.6);
+			
+		}
+		
+		.box:hover {
+			-webkit-animation:zoom 5s;
+			-o-animation:zoom 5s;
+			-moz-animation:zoom 5s;
+			-ms-animation:zoom 5s;
+			animation:zoom 5s;
+		}
+
+		/* this will define custom rules for animations */
+		@-webkit-keyframes zoom {
+			/*from {width:150px}*/
+			/*to {width:450px}*/
+			0% {width:150px}
+			20% {height:450px}
+			50% {background-color:red}
+			80% {background-color:yellow;border:10px solid rgb(200,89,56)}
+			100% {width:450px;height:300px}
+		}
+
+		@-moz-keyframes zoom {
+			/*from {width:150px}*/
+			/*to {width:450px}*/
+			0% {width:150px}
+			20% {height:450px}
+			50% {background-color:red}
+			80% {background-color:yellow;border:10px solid rgb(200,89,56)}
+			100% {width:450px;height:300px}
+		}
+
+		@-o-keyframes zoom {
+			/*from {width:150px}*/
+			/*to {width:450px}*/
+			0% {width:150px}
+			20% {height:450px}
+			50% {background-color:red}
+			80% {background-color:yellow;border:10px solid rgb(200,89,56)}
+			100% {width:450px;height:300px}
+		}
+
+		@-ms-keyframes zoom {
+			/*from {width:150px}*/
+			/*to {width:450px}*/
+			0% {width:150px}
+			20% {height:450px}
+			50% {background-color:red}
+			80% {background-color:yellow;border:10px solid rgb(200,89,56)}
+			100% {width:450px;height:300px}
+		}
+
+		@keyframes zoom {
+			/*from {width:150px}*/
+			/*to {width:450px}*/
+			0% {width:150px}
+			20% {height:450px}
+			50% {background-color:red}
+			80% {background-color:yellow;border:10px solid rgb(200,89,56)}
+			100% {width:450px;height:300px}
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div style='position:relative' class='box'>
+	</div>		
+</body>
+</html>

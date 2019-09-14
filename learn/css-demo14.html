@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Page</title>
+	<style>
+			
+		body {
+			margin:0;
+		}	
+
+		.column {
+			background-color:lightblue;
+			height:20px;
+			float:left;
+			margin:1px;
+		}
+
+		/* targeting large devices */
+		@media screen and (max-width:1200px) {
+
+			.column {
+				width:24%;
+			}
+		}
+
+		/* targeting medium devices */
+		@media screen and (max-width:800px) {
+
+			.column {
+				width:48%;
+			}
+		}
+
+
+		/* targeting small devices */
+		@media screen and (max-width:510px) {
+		
+			.column {
+				width:100%;
+				margin-bottom:2px;
+			}
+			
+			.row div:last-child {
+				display:none;
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class='row'>
+		<div class='column'>I'm a COOL!</div>
+		<div class='column'>I'm a COOL!</div>
+		<div class='column'>I'm a COOL!</div>
+		<div class='column'>I'm a COOL!</div>
+	</div>		
+</body>
+</html>
