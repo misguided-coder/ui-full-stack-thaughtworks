@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	//var arg function
+	function sum(a,b) {
+		if(typeof b == 'undefined')
+			b = 100;
+	
+		document.write("Length : "+arguments.length);
+		document.write("<br/>");
+		var rs = 0;
+		for(var idx=2;idx < arguments.length;idx++) {
+			rs = rs + arguments[idx];
+		}
+		document.write("SUM : "+(rs+a+b));
+		document.write("<br/>");
+	}	
+
+
+	sum(4);
+	sum(4,null);
+	sum(4,false);
+
+	sum(10,5);
+	sum(10,5,8,3);
+	sum(10,5,8,3,90,23);
+	sum(10,5,8,3,9);
+	sum(4,true);
+	sum(true,4);
+	sum(4,'');
+			
+</script>
+</head>
+<body>
+</body>
+</html>

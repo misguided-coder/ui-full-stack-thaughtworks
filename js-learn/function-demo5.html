@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	/*function doWork() {
+		document.write("I started doing work!!");
+		document.write("<br/>");
+
+		function doMoreWork() {
+			document.write("I am doing work!!");
+			document.write("<br/>");
+		}	
+
+		//return 420;
+		return doMoreWork;
+	}*/
+
+
+	/*function doWork() {
+		document.write("I started doing work!!");
+		document.write("<br/>");
+
+		return function doMoreWork() {
+			document.write("I am doing work!!");
+			document.write("<br/>");
+		}	
+	}*/
+
+
+	function doWork() {
+		document.write("I started doing work!!");
+		document.write("<br/>");
+
+		return function () {
+			document.write("I am doing work!!");
+			document.write("<br/>");
+		}	
+	}
+
+	
+	
+	doWork()();
+
+	/*var rs = doWork();
+	document.write(rs);
+	document.write("<br/>");
+	document.write(typeof rs);
+	document.write("<br/>");
+	rs();*/
+	
+			
+</script>
+</head>
+<body>
+</body>
+</html>

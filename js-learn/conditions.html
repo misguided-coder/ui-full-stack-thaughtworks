@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	var salary = 0;
+
+	//default operator
+	var result = salary || 500000; 
+
+	document.write("Salary is : "+result);
+	document.write("<br/>");
+
+	//ternery operator
+	//var result = salary > 40000 ? "Rich Employee" : "Poor Employee"; 
+	result = salary ? "Rich Employee" : "Poor Employee"; 
+
+	document.write(result);
+	document.write("<br/>");
+
+
+	//if(salary == 3400000){
+	if(salary) {
+		document.write("Rich man!!");
+		document.write("<br/>");
+	} else {
+		document.write("Poor man!!");
+		document.write("<br/>");
+	}	
+	
+
+	var examStatus = true;
+	
+	//if(examStatus == true){
+	if(examStatus) {
+		document.write("Exam cleared!!");
+		document.write("<br/>");
+	} else {
+		document.write("Exam failed!!");
+		document.write("<br/>");
+	}	
+
+	var color = 'Blue';
+
+	switch(color) {
+		case "Red":
+			document.write("Red is a SUN color!!");
+			document.write("<br/>");
+			break;
+		case "Blue":
+			document.write("Blue is cool!!");
+			document.write("<br/>");
+			break;
+		case "Yellow":
+			document.write("Yellow is atractive color!!");
+			document.write("<br/>");
+			break;
+		default:
+			document.write("Unknown color!!");
+			document.write("<br/>");
+	}	
+
+
+	var age = 30;	
+	var city = "Pune";
+
+	if(age > 20) {
+		document.write("You have grown!!");
+		document.write("<br/>");
+		if(city == "Delhi") {
+			document.write("You are living in capital!!");
+			document.write("<br/>");
+		}
+	} else if(age < 20) {
+		document.write("You are still young!!");
+		document.write("<br/>");
+	} else if(age == 20) {
+		document.write("You are young!!");
+		document.write("<br/>");
+	} 
+
+</script>
+</head>
+<body>
+</body>
+</html>

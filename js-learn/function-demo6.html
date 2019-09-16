@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	function grow() {
+		document.write("I am just born!!");
+		document.write("<br/>");
+
+		return function () {
+			document.write("I am little grown!!");
+			document.write("<br/>");
+	
+			return function () {
+				document.write("I am now young!!");
+				document.write("<br/>");
+		
+				return function () {
+					document.write("I am very strong now!!");
+					document.write("<br/>");
+
+					return function (age) {
+						document.write("I am "+age+" yrs old and now ready to kill!!");
+						document.write("<br/>");
+					}		
+
+				}		
+			}		
+		}	
+	}	
+
+
+	grow()()()()(24);	
+
+	var young = grow()()();	
+	//50 loc
+	document.write("=========================");
+	document.write("<br/>");
+	young()(40);
+				
+</script>
+</head>
+<body>
+</body>
+</html>

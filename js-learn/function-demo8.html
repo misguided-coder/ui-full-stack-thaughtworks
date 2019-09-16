@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	function temperature(city) {
+		return function(month) {
+			return function(day) {
+				document.write("Temperature on day "+day+" in month "+month+" in city "+city+" is "+Math.floor(Math.random()*55));
+				document.write("<br/>");
+			}
+		}
+	}	
+
+	
+	/*temperature("Jaipur")("June")(14);
+	temperature("Jaipur")("June")(12);*/
+
+	var jaipurTemperature = temperature("Jaipur");
+	var delhiTemperature = temperature("Delhi");
+
+	var jaipurJuneTemperature = jaipurTemperature("June");
+
+	delhiTemperature("Jan")(10); 
+	delhiTemperature("Dec")(14); 
+	delhiTemperature("Mar")(22); 
+
+	jaipurJuneTemperature(12); 
+	jaipurJuneTemperature(15); 
+	jaipurJuneTemperature(19); 
+	jaipurJuneTemperature(22); 
+	jaipurJuneTemperature(28); 
+
+
+	document.write("=========================");
+	document.write("<br/>");
+				
+</script>
+</head>
+<body>
+</body>
+</html>

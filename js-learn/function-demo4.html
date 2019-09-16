@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	function doWork() {
+		document.write("I started doing work!!");
+		document.write("<br/>");
+
+		function doMoreWork() {
+			document.write("I am doing work!!");
+			document.write("<br/>");
+
+			function doFinishWork() {
+				document.write("I almost finished work!!");
+				document.write("<br/>");
+
+				var work = function () {
+					document.write("I finished work and started other work!!");
+					document.write("<br/>");
+				};
+
+				work();	
+				work.call();	
+				work.apply();	
+				
+				(function () {
+					document.write("I finished other work!!");
+					document.write("<br/>");
+				})();
+
+			}	
+			doFinishWork();
+		}	
+	
+		doMoreWork();
+	}	
+	
+	doWork();
+			
+</script>
+</head>
+<body>
+</body>
+</html>

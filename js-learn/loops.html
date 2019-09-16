@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+	
+	var numbers = [2,6,4,9,7,5,7,2,1,4,5,6];	
+
+	//ES6 (JavaScript 1.6)
+	for(var idx of numbers) {
+		document.write("Value is : "+idx);
+		document.write("<br/>");		
+	}	
+
+	document.write("Over and Out!!");
+	document.write("<br/>");
+
+
+	for(var idx in numbers) {
+		document.write("Value is : "+idx);
+		document.write("<br/>");		
+	}	
+
+	document.write("Over and Out!!");
+	document.write("<br/>");
+
+	
+	for(var idx = 0;idx < numbers.length;idx++) {
+		document.write("Value is : "+numbers[idx]*numbers[idx]);
+		document.write("<br/>");		
+	}	
+
+	document.write("Over and Out!!");
+	document.write("<br/>");
+
+
+	//for(var count = 0;count < 10;count = count + 1) {
+	//for(var count = 0;count < 10;count++) {
+	for(var count = 10;count > 0;count--) {
+		document.write("Helooooooooo..... "+count);
+		document.write("<br/>");		
+	}	
+
+	document.write("Over and Out!!");
+	document.write("<br/>");
+
+	count = 0;
+
+	do {
+		document.write("Helooooooooo......");
+		document.write("<br/>");
+		count = count + 1;
+	} while(count < 10);	
+
+	document.write("Over and Out!!");
+	document.write("<br/>");
+
+	count = 0;
+
+	while(count < 10) {
+		document.write("Helooooooooo......");
+		document.write("<br/>");
+		count = count + 1;
+	}	
+
+	document.write("Over and Out!!");
+	document.write("<br/>");
+
+</script>
+</head>
+<body>
+</body>
+</html>

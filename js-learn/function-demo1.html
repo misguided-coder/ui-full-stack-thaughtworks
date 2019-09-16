@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+
+	(function (name) {
+		document.write("Hi "+name);
+		document.write("<br/>");
+	})('Ritesh');
+
+
+	//function expression
+	var greet = function (name) {
+		document.write("Hi "+name);
+		document.write("<br/>");
+	}
+
+	document.write(greet);
+	document.write("<br/>");
+
+	document.write(typeof greet);
+	document.write("<br/>");
+
+	greet('Raj');
+
+	//anonymous function
+	//function expression
+	//IIFE - Immediately Invocable Function Expression
+	//Self Invoking function
+	(function () {
+		document.write("Hi ji");
+		document.write("<br/>");
+	})();
+
+	//function declaration
+	function diff(a,b) {
+		return a-b;
+	}	
+
+	var rs = diff(12,4);
+
+	document.write("DIFF : "+rs);
+	document.write("<br/>");
+	
+
+	//function declaration
+	function sum(a,b) {
+		document.write("SUM : "+(a+b));
+		document.write("<br/>");
+	}	
+
+	sum(2,2);
+
+	//function invocation
+	hello();
+
+	//function declaration
+	function hello() {
+		document.write("Hello ji");
+		document.write("<br/>");
+	}	
+
+	//function invocation
+	hello();
+			
+</script>
+</head>
+<body>
+</body>
+</html>

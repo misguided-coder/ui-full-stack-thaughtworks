@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	function sum(a,b) {
+		document.write(a+b);
+		document.write("<br/>");
+	}	
+
+	sum(10,5);
+	sum.call(null,10,50);
+	sum.apply(null,[10,50]);
+
+	function hello() {
+		document.write("Hello ji");
+		document.write("<br/>");
+	}	
+
+	//function invocation pattern
+	hello();
+	hello.call();
+	hello.apply();
+			
+</script>
+</head>
+<body>
+</body>
+</html>
