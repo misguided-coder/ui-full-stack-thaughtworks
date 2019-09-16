@@ -1,0 +1,24 @@
+@mixin simple-button {
+	width:70px;
+	padding:10px;
+	margin:2px;
+	border:1px solid transparent;	
+}
+
+.cancel {
+	@include simple-button;
+	background-color:gray;
+	cursor:hand;
+}
+
+.confirm {
+	@include simple-button;
+	background-color:green;
+	cursor:hand;
+}
+
+.save {
+	@include simple-button;
+	background-color:blue;
+	cursor:hand;
+}

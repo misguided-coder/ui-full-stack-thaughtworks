@@ -1,0 +1,59 @@
+$shape-width: null;
+$shape-height: null;
+$shape-color: rgb(0,130,50);
+
+@mixin box {
+	width:$shape-width;
+	height:$shape-height;
+}
+
+@mixin centeredBox {
+	margin:0 auto;
+}
+
+
+@mixin circle {
+	$shape-width: 300px !global; 
+	$shape-height: 300px !global;
+
+	border-radius : 9999px;
+	@include box;
+}
+
+@mixin shape($radius:20px,$width:100px,$height:100px) {
+	$shape-width: $width !global; 
+	$shape-height: $height !global;
+
+	border-radius : $radius;
+	@include centeredBox;
+	@include box;
+}
+
+
+#div1 {
+	@include circle;
+	background-color: $shape-color;
+	
+}
+
+#div2 {
+	@include shape(10px,300px,300px);
+	background-color: $shape-color;
+}
+
+
+#div3 {
+	@include shape(0px,400px,300px);
+	background-color: $shape-color;
+}
+
+
+#div4 {
+	@include shape(40px,500px,200px);
+	background-color: $shape-color;
+}
+
+#div5 {
+	@include shape(10px);
+	background-color: $shape-color;
+}

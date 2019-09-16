@@ -1,0 +1,12 @@
+nav {
+  background-color: blue;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  text-decoration: none;
+}

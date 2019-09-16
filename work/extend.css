@@ -1,0 +1,21 @@
+.simple-button, .save, .confirm, .cancel {
+  width: 70px;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid transparent;
+}
+
+.cancel {
+  background-color: gray;
+  cursor: hand;
+}
+
+.confirm {
+  background-color: green;
+  cursor: hand;
+}
+
+.save {
+  background-color: blue;
+  cursor: hand;
+}

@@ -1,0 +1,22 @@
+$page-width:100%;
+$columns:4;
+$column-margin:2%;
+$column-height:150px;
+$column-color: rgb(0,130,50);
+
+@mixin column {
+	width : ($page-width/$columns) - ($column-margin * 2);
+}
+
+body {
+	width: $page-width;
+	margin: 0 auto;	
+}
+
+.column {
+	@include column;
+	margin:$column-margin;
+	height:$column-height;
+	background-color:$column-color;
+	float:left;
+}

@@ -1,0 +1,42 @@
+$page-width:900px;
+$page-radius : $page-width * .02;
+$page-border:2px solid gray;
+$primary-color : #203022;
+//$secondery-color : $primary-color + 051009;
+$div-content : 'Modi is the boss.';
+$boss-name : 'Modi';
+$div-content : '#{$boss-name} is the boss.';
+$highlight-class: highlight;
+$bgc : background-color;
+
+
+body {
+	width: $page-width;
+	border: $page-border;
+	border-radius : $page-radius;
+	color : $primary-color;
+	//background-color : $secondery-color;
+}
+
+
+div {
+	content : $div-content;
+	//content : '#{$boss-name} is the boss.';
+	//content : '2 + 2 is #{2 + 2}.';
+}
+
+
+div.#{$highlight-class} {
+	background-color:yellow;
+}
+
+
+span.#{$highlight-class} {
+	#{$bgc}:blue;
+}
+
+h1.#{$highlight-class} {
+	#{$bgc}:gold;
+}
+
+

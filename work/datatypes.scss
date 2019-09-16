@@ -1,0 +1,37 @@
+$font-color: green; //color type variable
+$font-size: 34px; //number type variable
+$box-width: 300px; //number type variable
+$box-style: solid; //string type variable
+$box-border-width: 10px; //number type variable
+$box-border-color: yellow; //color type variable
+$margin-left : 10; //number type variable (unitless)
+$padding-left : 10.6; //number type variable (unitless)
+$div-content : 'Lets visit Heaven'; //string type variable 
+$blue-theme : #000088; //color type variable 
+$sky-blue-theme : rgb(0,0,160); //color type variable 
+$isHeader : true; //boolean type variable 
+$box-margin : 20px 10px 24px 12px; //list type variable 
+$box-padding : (20px,10px,24px,12px); //list type variable 
+$some-styles : (font-name:'Arial',font-style:'Bold',font-size:30px); //map type variable 
+$config : (
+	author:'Ritesh',
+	home :(
+	   color:$font-color,
+	   margin:$box-margin
+	)
+); //config map 
+
+div {
+  width : $box-width;
+  border: $box-border-width $box-style 	$box-border-color;
+  color : $font-color;
+  background-color : $sky-blue-theme;
+  margin:$box-margin;
+  padding:$box-padding;
+}
+
+h1 {
+   text-decoration : underline;    
+   color : $font-color;
+   font-family : unquote(map-get($some-styles,font-name));	
+}

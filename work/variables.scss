@@ -1,0 +1,18 @@
+$font-color: green;
+$font-size: 34px;
+$box-width: 300px;
+$box-style: solid;
+$box-border-width: 10px;
+$box-border-color: yellow;
+
+div {
+  width : $box-width;
+  border: $box-border-width $box-style 	$box-border-color;
+  color : $font-color;
+  background-color : yellow;
+}
+
+h1 {
+   text-decoration : underline;    
+   color : $font-color;
+}

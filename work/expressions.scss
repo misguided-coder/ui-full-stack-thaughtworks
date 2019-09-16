@@ -1,0 +1,45 @@
+$count : 1;
+
+div {
+	@if $count > 1 {
+		background-color:red;
+	}
+}
+
+h1 {
+	@if $count > 5 {
+		background-color:red;
+	} @else if $count < 5 {
+		background-color:blue;
+	} @else if $count == 5 {
+		background-color:orange;
+	}
+}
+
+
+@while $count <= 5 {
+	.row-#{$count} {
+		background-color : darken(#7722aa,(4%*$count));
+	}
+	$count :  $count + 1;
+}
+
+
+@for $val from 10 through 40 {
+	#list-item-#{$val} {
+		background-color : lighten(#7722aa,(2%*$val));
+	}
+}
+
+@each $style in (normal,bold,bolder) {
+	.text-#{$style} {
+		font-weight:$style;
+	}
+}
+
+@each $config in ((name:highlight,size:20px,color:blue),(name:sunny,size:10px,color:orange),(name:dark,size:10px,color:black)) {
+	.text-#{map-get($config,name)} {
+		font-size:map-get($config,size);
+		color:map-get($config,color);
+	}
+}
