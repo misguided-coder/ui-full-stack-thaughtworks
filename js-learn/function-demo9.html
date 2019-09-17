@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	function doWork() {
+		document.write("I am done!!");
+		document.write("<br/>");
+	}	
+
+
+	//function updateDB() {
+		
+
+	function displayTime() {
+		var date = new Date();
+		document.write(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds());
+		document.write("<br/>");
+	}	
+
+
+	/* to set a clock which will 
+	  tick after delay of 5s */
+	var clock1 = window.setTimeout(doWork,2000);
+	var clock2 = window.setInterval(function () {
+		document.write("DB updated!!");
+		document.write("<br/>");
+	},2000);
+	var clock3 = window.setInterval(displayTime,1000);
+
+
+	window.setTimeout(function(){
+		window.clearTimeout(clock1);
+		window.clearInterval(clock2);
+		window.clearInterval(clock3);
+		document.write("All Clocks removed from memory!!");
+		document.write("<br/>");
+	},10000);
+
+</script>
+</head>
+<body>
+</body>
+</html>

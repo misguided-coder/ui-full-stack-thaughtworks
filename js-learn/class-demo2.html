@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	//class declaration
+	function Car() {
+		this.vin = 1000;
+		this.model = 'X1';
+		this.make = 'BMW';
+		this.price = 1200000.00;
+	}
+
+	var car1 = new Car();
+	var car2 = new Car();
+	
+	car1.model = 'X6';
+	car1.speed = 300; //km per hr
+	car2.speed = 320; //km per hr
+
+	document.write(car1.vin);
+	document.write("<br/>");
+	document.write(car1.model);
+	document.write("<br/>");
+	document.write(car1.make);
+	document.write("<br/>");
+	document.write(car1.price);
+	document.write("<br/>");
+	document.write(car1.speed);
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	document.write(car2.vin);
+	document.write("<br/>");
+	document.write(car2.model);
+	document.write("<br/>");
+	document.write(car2.make);
+	document.write("<br/>");
+	document.write(car2.price);
+	document.write("<br/>");
+	document.write(car2.speed);
+	document.write("<br/>");
+
+</script>
+</head>
+<body>
+</body>
+</html>

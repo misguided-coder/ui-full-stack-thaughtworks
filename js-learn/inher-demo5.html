@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inheritence Demo</title>
+<script>
+
+	function Furniture() {
+
+		this.id = 1;
+		this.material = "Wood";
+		
+		this.make = function () {
+			document.write(`Furniture is made of ${this.material}`);
+			document.write("<br/>");
+		};
+
+		this.paint = function () {
+			document.write(`Furniture is painted`);
+			document.write("<br/>");
+		};
+
+		this.info = function() {
+			document.write(`ID : ${this.id}`);
+			document.write("<br/>");
+			document.write(`Material : ${this.material}`);
+			document.write("<br/>");
+			document.write("=========================");
+			document.write("<br/>");
+		}
+	}
+
+	function Chair() {
+
+		this.material = "Gold";
+		this.height = 30; //cm
+		this.hands = 2; 
+		this.legs = 4;
+		
+		this.canRevolve = function() {
+			return true;
+		}			
+
+		this.info = function() {
+			Chair.prototype.info.call(this);
+			document.write(`Height : ${this.height}`);
+			document.write("<br/>");
+			document.write(`Hands : ${this.hands}`);
+			document.write("<br/>");
+			document.write(`Legs : ${this.legs}`);
+			document.write("<br/>");
+			document.write("=========================");
+			document.write("<br/>");
+		}
+	}
+
+	
+	function Desk() {
+	
+	}
+
+
+	Chair.prototype = new Furniture();
+	
+	//improving correct constructor name
+	Chair.prototype.constructor = 'Chair'; 
+	
+	Desk.prototype = new Furniture();
+	//improving correct constructor name
+	Desk.prototype.constructor = 'Desk'; 
+
+	var chair1 = new Chair();
+	var desk1 = new Desk();
+
+	console.log(chair1.constructor);
+	console.log(desk1.constructor);
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,38 @@
+Write a program which will represent employee entity and will have employee
+related properties like id,name,salary,desig,dept,email,phone and will have 
+below functionalities :
+
+info
+update salary
+update email
+join project
+apply for leave
+
+and the same application will have payroll related functionalities also in 
+a seperate class like 
+
+hra (40%)
+da (10%)
+ta (8%)
+tds (10%)
+total salary (sum of all)
+
+and will display entire details inside browswer window.
+
+Rules to Follow very strictly :
+1) class name must start with uppercase 
+2) function name must start with lowercase
+3) property name must start with lowercase
+4) do not use very small or very big name
+5) use only sensible and meaningful names
+6) code must be properly indented 
+7) decorate you code with comment where required
+8) keep you code in seperate .js files with proper name and folder structure
+
+
+
+
+
+
+
+

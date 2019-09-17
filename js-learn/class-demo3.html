@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	//class declaration	
+	//constructor function
+	//constructor
+	function Car(vin,model,make,price,speed) {
+		if(typeof speed == 'undefined')
+			speed = 160;
+
+		document.write("Inside Car constructor!!");
+		document.write("<br/>");
+
+		this.vin = vin;
+		this.model = model;
+		this.make = make;
+		this.price = price;
+		this.speed = speed;
+		
+		this.start = function () {
+			document.write(this.make+' '+this.model+" engine started!!");
+			document.write("<br/>");
+		};
+
+		this.stop = function () {
+			document.write(this.make+' '+this.model+" engine stopped!!");
+			document.write("<br/>");
+		};
+
+		this.accelerate = function () {
+			this.speed = this.speed + 10;
+			document.write("Car is speeding up and current speed is : "+this.speed);
+			document.write("<br/>");
+		};
+
+		this.applyBrake = function () {
+			this.speed = this.speed - 10;
+			document.write("Car is speeding down and current speed is : "+this.speed);
+			document.write("<br/>");
+		};
+
+		this.info = function() {
+			document.write("VIN : "+this.vin);
+			document.write("<br/>");
+			document.write("Model : "+this.model);
+			document.write("<br/>");
+			document.write("Make : "+this.make);
+			document.write("<br/>");
+			document.write("Price : "+this.price);
+			document.write("<br/>");
+			document.write("Speed : "+this.speed);
+			document.write("<br/>");
+			document.write("=========================");
+			document.write("<br/>");
+		}
+	}
+
+	var car1 = new Car(1,'Q2','Audi',450000.00,260);
+	var car2 = new Car(2,'Q7','Audi',900000.00,360);
+	var car3 = new Car(3,'Q5','Audi',670000.00);
+
+
+	car1.info();
+	car2.info();
+	car3.info();
+
+	/*car1.start();
+	car1.accelerate();
+	car1.accelerate();
+	car1.accelerate();
+	car1.accelerate();
+	car1.accelerate();
+	car1.applyBrake();
+	car1.applyBrake();
+	car1.stop();*/
+
+	/*document.write(car1.vin);
+	document.write("<br/>");
+	document.write(car1.model);
+	document.write("<br/>");
+	document.write(car1.make);
+	document.write("<br/>");
+	document.write(car1.price);
+	document.write("<br/>");
+	document.write(car1.speed);
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	document.write(car2.vin);
+	document.write("<br/>");
+	document.write(car2.model);
+	document.write("<br/>");
+	document.write(car2.make);
+	document.write("<br/>");
+	document.write(car2.price);
+	document.write("<br/>");
+	document.write(car2.speed);
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	document.write(car3.vin);
+	document.write("<br/>");
+	document.write(car3.model);
+	document.write("<br/>");
+	document.write(car3.make);
+	document.write("<br/>");
+	document.write(car3.price);
+	document.write("<br/>");
+	document.write(car3.speed);
+	document.write("<br/>");*/
+
+</script>
+</head>
+<body>
+</body>
+</html>

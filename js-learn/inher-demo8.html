@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inheritence Demo</title>
+<script>
+
+	//Changing implementation of default toString() method in Object class
+	Object.prototype.toString = function() {
+		return "I am the boss!!";
+	};
+
+	Object.prototype.author = "Ritesh Tyagi";
+	Object.prototype.project = "Indian Railway";
+
+	function Furniture() {
+
+		this.id = 1;
+		this.material = "Wood";
+	
+		this.info = function() {
+			document.write(`ID : ${this.id}`);
+			document.write("<br/>");
+			document.write(`Material : ${this.material}`);
+			document.write("<br/>");
+			document.write("=========================");
+			document.write("<br/>");
+		}
+
+	}
+
+
+	Furniture.prototype.make = function () {
+		document.write(`Furniture is made of ${this.material}`);
+		document.write("<br/>");
+	};
+
+	Furniture.prototype.paint = function () {
+		document.write(`Furniture is painted`);
+		document.write("<br/>");
+	};
+
+	function Desk() {
+		this.material = "Plastic";
+	}
+ 
+	Desk.prototype = new Furniture();
+		
+	var desk1 = new Desk();
+
+	desk1.make();
+
+	document.write(desk1.material);
+	document.write("<br/>");
+	
+	document.write(Desk.prototype.material);
+	document.write("<br/>");
+
+	document.write(desk1.__proto__.material);
+	document.write("<br/>");
+
+	document.write(desk1.hasOwnProperty('material'));
+	document.write("<br/>");
+	
+	document.write(desk1.hasOwnProperty('id'));
+	document.write("<br/>");
+	
+</script>
+</head>
+<body>
+</body>
+</html>

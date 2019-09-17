@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	//class declaration
+	function Car() {
+		this.vin = 1000;
+		this.model = 'X1';
+		this.make = 'BMW';
+		this.price = 1200000.00;
+	}
+
+	var car = new Car();
+
+	document.write(car.vin);
+	document.write("<br/>");
+	document.write(car.model);
+	document.write("<br/>");
+			
+	document.write(car);
+	document.write("<br/>");
+
+	document.write(typeof car);
+	document.write("<br/>");
+
+	document.write(car instanceof Car);
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+
+</script>
+</head>
+<body>
+</body>
+</html>

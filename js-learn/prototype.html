@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prototype Demo</title>
+<script>
+
+	function Shape () {
+		this.size = '10x6';	
+		document.write(Shape.prototype.size);
+		document.write("<br/>");
+	}
+
+	Shape.prototype.size = '8x6'; 	
+
+	var shape1 = new Shape();
+	var shape2 = new Shape();
+
+	//shape1.size = '10x6';	
+	//shape2.size = '10x6';	
+
+	document.write(shape1.size);
+	document.write("<br/>");
+
+
+	document.write(shape2.size);
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+
+</script>
+</head>
+<body>
+</body>
+</html>

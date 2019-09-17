@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+	
+	var age = 45;	//global variable (window)		
+
+	function display() {
+		//var age = 34;	//local variable		
+		//age = 34; //global variable added to global context (window)			 
+		window.age = 20; //global variable added to global context (window)			 
+		document.write("Age : "+age);
+		document.write("<br/>");
+		document.write("Age : "+window.age);
+		document.write("<br/>");
+		document.write("Age : "+this.age);
+		document.write("<br/>");
+	}
+
+	display.version = '1.0.0';
+	display.call();
+	display();
+	window.display();
+	this.display();
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	document.write(display.version);
+	document.write("<br/>");
+
+
+	document.write("Age : "+age);
+	document.write("<br/>");
+
+	document.write("Age : "+window.age);
+	document.write("<br/>");
+
+	document.write("Age : "+this.age);
+	document.write("<br/>");
+
+	/*window.alert();
+	alert();
+	window.prompt();
+	prompt();
+	window.confirm();
+	confirm();
+	window.location;
+	location;
+	window.history;
+	history;
+	window.document;
+	document;*/
+
+</script>
+</head>
+<body>
+</body>
+</html>
