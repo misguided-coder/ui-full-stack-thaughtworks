@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	//window.arg1 = 200;
+	//window.arg2 = 100;
+
+	var arg1 = 200;
+	var arg2 = 100;
+
+	var obj1 = {arg1:40,arg2:10};
+	var obj2 = {arg1:4,arg2:1};
+	var obj3 = {arg1:400,arg2:100};
+	
+	function Cal() {
+
+		this.arg1 = 20;
+		this.arg2 = 10;
+		
+		//function declaration
+		this.sum = function () {
+			document.write("SUM : "+(this.arg1+this.arg2));
+			document.write("<br/>");
+		}
+
+		//function declaration
+		this.multiply = function (seedValue) {
+			document.write("Multiply : "+(seedValue*this.arg1*this.arg2));
+			document.write("<br/>");
+		}
+	}	
+
+	var cal1 = new Cal();
+
+	//function invocation standard pattern
+	//does not allow changing context while invoking function 
+	cal1.sum();
+	
+	//function invocation call and apply patterns
+	//does allow changing context while invoking function 
+	cal1.sum.call(window);	
+	cal1.sum.apply(window);	
+	cal1.sum.call(this);	
+	cal1.sum.apply(this);	
+	cal1.sum.call(null);	
+	cal1.sum.apply(null);	
+	cal1.sum.call();	
+	cal1.sum.apply();
+	
+	cal1.sum.call(obj1);	
+	cal1.sum.call(obj2);	
+	cal1.sum.call(obj3);	
+
+	cal1.multiply(5);		
+	cal1.multiply.call(window,5);		
+	cal1.multiply.apply(window,[5]);		
+	
+</script>
+</head>
+<body>
+</body>
+</html>

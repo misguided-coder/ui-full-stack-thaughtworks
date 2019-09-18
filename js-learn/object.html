@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Object Demo</title>
+<script>
+
+	//declare constructor function
+	function Book () {
+		this.title = 'JavaScript Good Parts';	
+
+		this.info = function() {
+			document.write(`Title : ${this.title}`);
+			document.write("<br/>");
+		}
+	}
+
+	//instantiate new object using  user defined constructor function
+	var book1 = new Book ();
+
+	document.write(typeof book1);
+	document.write("<br/>");
+
+
+	document.write(book1.title);
+	document.write("<br/>");
+
+	book1.info();
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	// instantiate new object without  user defined constructor function 
+	var book2 = new Object();
+	book2.title = 'JavaScript Bible';
+	book2.pages = 2400;
+	book2.chapters = 28;
+	book2.publisher = 'O Reilley';
+	book2.info = function() {
+		document.write(`Title : ${this.title}`);
+		document.write("<br/>");
+		document.write(`Pages : ${this.pages}`);
+		document.write("<br/>");
+		document.write(`Chapters : ${this.chapters}`);
+		document.write("<br/>");
+	};
+
+
+	document.write(typeof book2);
+	document.write("<br/>");
+
+	document.write(book2.title);
+	document.write("<br/>");
+
+	document.write(book2.pages);
+	document.write("<br/>");
+
+	book2.info();
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	/* instantiate new object 'literal way' without user defined 
+           constructor function */
+	var book3 = {};
+	book3.title = 'Learn JavaScript in 21 days';
+	book3.pages = 400;
+	book3.chapters = 12;
+	book3.publisher = 'Manning';
+	book3.info = function() {
+		document.write(`Title : ${this.title}`);
+		document.write("<br/>");
+		document.write(`Pages : ${this.pages}`);
+		document.write("<br/>");
+		document.write(`Chapters : ${this.chapters}`);
+		document.write("<br/>");
+	};
+
+	document.write(typeof book3);
+	document.write("<br/>");
+
+	document.write(book3.title);
+	document.write("<br/>");
+
+	document.write(book3.pages);
+	document.write("<br/>");
+
+	book3.info();
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	/* instantiate new object 'literal way' without user defined 
+           constructor function */
+	var book4 = {
+		title : 'Mastering Angular 7',
+		pages : 350,
+		chapters : 20,
+		info : function() {
+			document.write(`Title : ${this.title}`);
+			document.write("<br/>");
+			document.write(`Pages : ${this.pages}`);
+			document.write("<br/>");
+			document.write(`Chapters : ${this.chapters}`);
+			document.write("<br/>");
+		},
+		publisher : 'Manning'
+	};
+
+	//book4.publisher = 'Manning';
+	book4.pages = 380;
+
+	delete book4.pages;
+
+	book4.pages = 230;
+
+	document.write(typeof book4);
+	document.write("<br/>");
+
+	document.write(book4.title);
+	document.write("<br/>");
+
+	document.write(book4.pages);
+	document.write("<br/>");
+
+	document.write(book4.publisher);
+	document.write("<br/>");
+
+
+	book4.info();
+
+	document.write(book4.toString());
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+	
+</script>
+</head>
+<body>
+</body>
+</html>

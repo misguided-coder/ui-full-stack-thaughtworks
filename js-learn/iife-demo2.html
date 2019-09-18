@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+
+	(function () {
+
+		//singleton pattern
+		function CEO () {
+			document.write("Inside CEO constructor!!");	
+			document.write("<br/>");
+
+			this.name = 'Lalu Yadav';		
+			this.salary = 4500;		
+			this.age = 56;	
+
+			this.info = function () {
+				document.write(`Name : ${this.name}`);	
+				document.write("<br/>");
+				document.write(`Salary : ${this.salary}`);		
+				document.write("<br/>");
+				document.write(`Age : ${this.age}`);		
+				document.write("<br/>");
+				document.write("==========================");
+				document.write("<br/>");
+			} //info ends	
+
+		} //CEO ends
+
+		ceo = new CEO(); //singleton pattern
+	})();
+
+	//employee 1
+	ceo.info();
+
+	//employee 2
+	ceo.info();
+
+	//employee 3
+	ceo.info();
+			
+</script>
+</head>
+<body>
+</body>
+</html>

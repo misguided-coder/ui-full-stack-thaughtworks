@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo showing how write code to avoid polluting  global namespace</title>
+<script>
+
+	//namespce creation
+	//Always creat namespace upto three level minimum as per suggestion
+	var THOUGHTWORKS = {gutthy:{}};	
+
+	THOUGHTWORKS.gutthy.title = 'A Simple Every Day App';
+	THOUGHTWORKS.gutthy.release = '20-Sep-2010';
+	THOUGHTWORKS.gutthy.version = '2.0.0';
+	THOUGHTWORKS.gutthy.members = ['Jaggu','Chandu','Pintu'];
+
+	THOUGHTWORKS.gutthy.calc =  {
+		title : 'Simple Math Calculator',
+		sum : function (a,b) {
+			document.write(`SUM : ${a+b}`);
+			document.write("<br />");
+		},
+		diff : function (a,b) {
+			document.write(`DIFF : ${a-b}`);
+			document.write("<br />");
+		}
+	};
+
+
+	THOUGHTWORKS.gutthy.payroll =  {
+		title : 'Simple Salary Calculator',
+		hra : function (salary) {
+			document.write(`HRA : ${salary*.40}`);
+			document.write("<br />");
+		},
+		da : function (salary) {
+			document.write(`DA : ${salary*.10}`);
+			document.write("<br />");
+		}
+	};
+
+	document.write(THOUGHTWORKS.gutthy.calc.title);
+	document.write("<br />");
+
+	THOUGHTWORKS.gutthy.calc.sum(10,5);	
+	THOUGHTWORKS.gutthy.calc.diff(10,5);	
+
+	document.write(THOUGHTWORKS.gutthy.payroll.title);
+	document.write("<br />");
+
+	THOUGHTWORKS.gutthy.payroll.hra(20000.00);	
+	THOUGHTWORKS.gutthy.payroll.da(20000.00);	
+		
+</script>
+</head>
+<body>
+</body>
+</html>

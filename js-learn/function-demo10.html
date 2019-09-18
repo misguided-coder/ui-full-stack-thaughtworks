@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+
+	//var diff = new Function('a','b',"document.write(`DIFF : ${a-b} <br/>`)");
+	var diff = Function('a','b',"document.write(`DIFF : ${a-b} <br/>`)");
+	diff.version= '1.0';	
+
+	diff(20,4);
+
+	document.write(typeof diff);
+	document.write("<br/>");
+
+	document.write(diff.version);
+	document.write("<br/>");
+
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	function sum(a,b,c) {
+		document.write("SUM : "+(a+b+c));
+		document.write("<br/>");
+	}	
+
+	sum.version= '3.0';	
+
+	sum(2,2,6);
+	
+	document.write(typeof sum);
+	document.write("<br/>");
+
+	document.write(sum.version);
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+			
+</script>
+</head>
+<body>
+</body>
+</html>

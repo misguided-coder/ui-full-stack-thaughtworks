@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+
+	var obj1 = {arg1:40,arg2:10};
+	var obj2 = {arg1:4,arg2:1};
+	
+	function Cal() {
+
+		this.arg1 = 20;
+		this.arg2 = 10;
+
+		this.sum = function () {
+			document.write("SUM : "+(this.arg1+this.arg2));
+			document.write("<br/>");
+		}
+	}	
+
+	var cal1 = new Cal();
+
+	var boundSum = cal1.sum.bind(cal1); //binding function forever in cal1 context
+	
+	boundSum();
+	boundSum.call(obj1); //context will be only cal1
+	boundSum.call(obj2); //context will be only cal1
+
+</script>
+</head>
+<body>
+</body>
+</html>

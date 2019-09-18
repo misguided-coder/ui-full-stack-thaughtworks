@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+
+	var obj1 = {arg1:40,arg2:10};
+	var obj2 = {arg1:4,arg2:1};
+	
+	function Cal() {
+			
+		this.arg1 = 20;
+		this.arg2 = 10;
+
+		//private method
+		var originalSum = function () {
+			document.write("SUM : "+(this.arg1+this.arg2));
+			document.write("<br/>");
+		}
+
+		//public method
+		this.sum = originalSum.bind(this);
+	}	
+
+	var cal1 = new Cal();
+	cal1.sum();
+
+	cal1.sum.call(obj1);
+
+	
+</script>
+</head>
+<body>
+</body>
+</html>

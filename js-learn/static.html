@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<script>
+
+	function Company() {
+	}
+
+	Company.TITLE = 'ThoughtWorks';
+	Company.showRevenue = function() {
+		return Math.pow(120000*Math.random(),4);				
+	};
+
+	document.write(Company.TITLE);
+	document.write("<br/>");
+
+	document.write(Company.showRevenue());
+	document.write("<br/>");
+
+	document.write("=========================");
+	document.write("<br/>");
+
+</script>
+</head>
+<body>
+</body>
+</html>
