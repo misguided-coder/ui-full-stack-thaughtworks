@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BEM Methodology in practice while using CSS</title>
+	<style>
+		.content {
+			display : inline-block;
+			width : 100%;
+			border : 1px dotted lighblue;
+			box-shadow : 0 10px 15px 10px blue;
+			border-radius : 10px;
+			
+		}
+		
+		.content .content__text {
+			font-size : 1.2em;			
+			text-transform : uppercase;			
+			background-color : lightgray;
+			border-bottom : 2px inset black;
+			padding : 2px 10px;
+		}
+
+		.content .content__text .content__text--highlight {
+			background-color : black;
+			color : yellow;
+			transform : rotate3d(-20deg,-20deg,0);
+		}
+
+		.content .content__text .content__text--deprecated {
+			font-style : italic;
+			text-decoration :line-through;
+			background-color : white;
+			color : black;
+		}
+
+		.content .content__text .content__text--contrast {
+			background-color : black;
+			color : white;
+		}
+
+		.button-bar {
+			display : block;
+			margin : 1px;
+			width : 80%;	
+			border : 1px dotted lighblue;
+			border-radius : 10px; 
+		}	
+
+		.button-bar.button-bar--header {
+			background-color : tomato;
+		}
+
+		.button-bar.button-bar--footer {
+			position : absolute;
+			bottom : 0;
+			background-color : gold;
+		}
+
+		.button-bar .button-bar__button {
+			display : inline-block;
+			margin-left : 0px;
+			border-right : 4px inset black;
+		}	
+				
+
+		.button-bar__button--first {
+			border-top-left-radius : 10px; 
+			border-bottom-left-radius : 10px; 
+			display : inline;
+			float : left;
+			margin-left : 20px;
+		}
+
+		.button-bar__button--last {
+			border-top-right-radius : 10px; 
+			border-bottom-right-radius : 10px; 
+		}
+
+		
+		.v-card {
+
+		}
+
+		.v-card--flip {
+
+		}
+
+		.v-card__logo {
+
+		}
+
+		.v-card__title {
+
+		}
+
+		.v-card__subtitle {
+
+		}
+
+		.v-card__into {
+
+		}
+
+		.v-card__address {
+
+		}
+
+		.v-card__header {
+
+		}
+
+		.v-card__footer {
+
+		}
+
+
+		.menu-bar {
+
+		}
+
+		.menu {
+
+		}
+
+		.menu-item {
+
+		}
+
+		.menu-link {
+
+		}
+
+		.menu-item--first {
+
+		}
+
+		.menu-item--last {
+
+		}
+
+		.header {
+
+		}
+
+		.footer {
+
+		}
+
+		.text-highlight {
+
+		}
+
+		.text-deprecated {
+
+		}
+
+		.text-big {
+
+		}
+
+
+		.text-small {
+
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class='content'>
+		<div class='content__text'>I'm a COOL!</div>
+		<div class='content__text'>I'm a COOL!</div>
+		<div class='content__text content__text--highlight'>I'm a COOL!</div>
+		<div class='content__text content__text--deprecated'>I'm a COOL!</div>
+		<div class='content__text content__text--contrast'>I'm a COOL!</div>
+	</div>	
+	<br/><br/><br/>	
+
+	<div class='button-bar button-bar--header'>
+		<input class='button-bar__button button-bar__button--first' type=button value='Save' />		 
+		<input class='button-bar__button' type=button value='Save' />		 
+		<input class='button-bar__button' type=button value='Save' />		 
+		<input class='button-bar__button button-bar__button--last' type=button value='Save' />		 
+	</div>
+
+	<div class='button-bar button-bar--footer'>
+		<input class='button-bar__button' type=button value='Save' />		 
+		<input class='button-bar__button' type=button value='Save' />		 
+		<input class='button-bar__button' type=button value='Save' />		 
+		<input class='button-bar__button' type=button value='Save' />		 
+	</div>
+
+</body>
+</html>

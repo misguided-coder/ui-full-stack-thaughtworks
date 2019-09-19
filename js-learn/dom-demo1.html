@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM working Demo</title>
+	<script>
+
+		function doInit() {
+			//var node = document.getElementById('article0');	
+			//console.log(node);
+			
+			//var nodeList = document.getElementsByTagName('article');	
+			//console.log(nodeList.length);
+	
+			//var nodeList = document.getElementsByClassName('animal');	
+			//console.log(nodeList.length);		
+		
+			//var nodeList = document.querySelectorAll('#article0 section');	
+			//var nodeList = document.querySelectorAll('#article0 > h2');	
+			//var nodeList = document.querySelectorAll('#article0 + article');	
+			//var nodeList = document.querySelectorAll('#car-wish-list li:first-child');	
+			var nodeList = document.querySelectorAll('#car-wish-list li:nth-child(3)');	
+			console.log(nodeList.length);		
+		}
+
+	</script>
+</head>
+<body onload='doInit();'>
+	<header>
+		<h1>Welcome To Beautiful World</h1>
+		<a href=#>Login</a>
+	</header>
+	<main>
+		<article>
+			<h2>Good Coder Rules</h2>
+			<p>Simplicity - Necessity is mother of all inventions but Simplicity is the father.</p>
+			<p>The most important skill for a programmer is the ability to effectively communicate ideas.</p>
+			<p>Readability is essential for maintainability.</p>
+			<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+			<p>Don't assume the code works - build and test it yourself.</p>
+			<p>Consider how the code will work in production.</p>
+			<p>Code should be Functional first,Clean and maintainable second, and Optimized third.</p>
+		</article>
+		<hr />	
+		<article>
+			Enter Value :<input type=text value='Hello Hi Bye Go' /><br/>
+			Enter Value :<input type=text value='Bye Go' /><br/>
+			Enter Value :<input type=text value='Hello Hi' /><br/>
+			Enter Value :<input type=text value='Hi Bye' /><br/>
+			Enter Value :<input type=text value='' /><br/>
+			Enter Value :<input type=text  /><br/>
+			Hobbies  : 
+			<input type=checkbox value='S' />Sleeping
+			<input type=checkbox value='D' />Dreaming
+			<input type=checkbox value='W' checked />Walking
+			<input type=checkbox value='E' />Eating
+			<br/>
+		</article>
+		
+		<article id='article0'>
+			<h2>Animals</h2>
+			<section>
+				<div class='animal'>Animals are part of our life.</div>
+				<div id='div0'>Animals also need food and water.</div>
+				<div class='animal'>Animals have life.</div>
+			</section>
+			<section>
+				<div>Animals also sleep like us.</div>
+				<div class='animal'>Animals also walk like us.</div>
+			</section>
+		</article>
+		<article>
+			<h2>Car Wish List</h2>
+			<section>
+				<ul id='car-wish-list'>
+					<li>Jaguar XE</li>
+					<li>Jaguar XF</li>
+					<li>BMW X6</li>
+					<li>BMW X1</li>
+					<li>Merc CLA</li>
+				</ul>
+			</section>
+			<section>
+				<ol id='luxury-car-wish-list'>
+					<li>Jaguar XE</li>
+					<li>Jaguar XF</li>
+					<li>BMW X6</li>
+					<li>BMW X1</li>
+					<li>Merc CLA</li>
+				</ol>
+			</section>
+		</article>
+	</main>
+	<footer>
+		<h1>Read our polities and terms before continue.</h1>
+		<div>
+			<h1>Follow Us</h1>
+		</div>
+	</footer>
+</body>
+</html>

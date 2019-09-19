@@ -1,0 +1,15 @@
+1) Create an empty html page with a button saying generate table. 
+    Once clicked on the button gerenate a table of size 10x6 showing
+  details about mobiles phones with below columns :
+	
+  Make
+  Model
+  Release Year	
+  Price
+  Color 	
+  Ranking
+
+  Data must be different in each row and column.
+
+  Make sure header row should be highlighted in different background color using javascript only.	
+  Make sure each row is in different background color using javascript only.	

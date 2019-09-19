@@ -1,0 +1,8 @@
+@function padding-em ($baseValue:5px) {	
+	@return $baseValue * 2;
+}
+
+@function column-width ($page-width:100px) {	
+	@return $page-width * .50;
+}
+

@@ -1,0 +1,84 @@
+@import 'common/reset';
+@import 'common/base';
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/functions';
+@import 'header';
+@import 'footer';
+
+.content {
+	display : inline-block;
+	width : $content-width;
+	border : 1px dotted $border-color;
+	@include box-shadow(10px,lighten($border-color,20%));
+	border-radius : $border-radius;
+
+	&__text {
+		font-size : $text-font-size;			
+		text-transform : uppercase;			
+		background-color : $secondory-color;
+		border-bottom : 2px inset black;
+		padding : padding-em(2px) padding-em(10px);
+
+		&--highlight {
+			background-color : black;
+			color : yellow;
+			transform : rotate3d(-20deg,-20deg,0);
+		}
+
+		&--deprecated {
+			font-style : italic;
+			text-decoration :line-through;
+			background-color : white;
+			color : black;
+		}
+
+		&--contrast {
+			background-color : black;
+			color : white;
+		}
+
+	}
+}
+		
+
+.button-bar {
+	display : block;
+	margin : 1px;
+	width : 80%;	
+	border : 1px dotted lighblue;
+	@include box-shadow(5px,darken($border-color,10%));
+	border-radius : 10px; 
+
+	&__button {
+		display : inline-block;
+		margin-left : 0px;
+		border-right : 4px inset black;
+		
+		&--first {
+			border-top-left-radius : 10px; 
+			border-bottom-left-radius : 10px; 
+			display : inline;
+			float : left;
+			margin-left : 20px;
+		}
+
+		&--last {
+			border-top-right-radius : 10px; 
+			border-bottom-right-radius : 10px; 
+		}
+	}	
+
+	&--header {
+		background-color : tomato;
+	}
+
+	&--footer {
+		position : absolute;
+		bottom : 0;
+		background-color : gold;
+	}
+
+}	
+
+
