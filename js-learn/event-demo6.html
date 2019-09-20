@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<style>
+	#container {
+		width : 600px;
+		height : 200px;
+		background-color : #c8c8c8;
+		margin : 20px auto;
+	}
+
+	.content {
+		color :  white; 
+		background-color : blue; 
+		font-size : 26px; 
+		border-bottom : 2px solid white;
+	}
+
+</style>
+<script>
+	
+
+	window.onload = function () {
+
+		var link0 = document.querySelectorAll('a')[0];
+
+		link0.addEventListener('click',function(evt) {
+			container.innerHTML = "<div class='content'>Link clicked.</div>";
+			if(evt.preventDefault)
+				evt.preventDefault();
+			else
+				return false;	
+		}); 
+
+	};
+
+</script>
+</head>
+<body>
+	<a href='date.html'>Show Date</a>
+	<br/><br/>
+	<section id='container'>
+	</section>
+</body>
+</html>

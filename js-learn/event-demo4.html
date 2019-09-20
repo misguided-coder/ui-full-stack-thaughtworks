@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<style>
+	.container {
+		display : flex;
+		flex-wrap : wrap;
+		width : 400px;
+		height : 200px;
+		background-color : #c8c8c8;
+		margin-top :10px;	
+	}
+
+	.box {
+		width : 100px;
+		height : 100px;
+		background-color : skyblue;
+	}
+
+	.content {
+		color :  white; 
+		background-color : blue; 
+		font-size : 26px; 
+		width : 100px; 
+	}
+</style>
+<script>
+
+	window.onload = function () {
+		container = document.querySelectorAll('.container')[0];	
+		var box = document.querySelectorAll('.box')[0];
+
+		if(typeof window.addEventListener === 'function') {
+			btn0.addEventListener('click',remove,true); 
+			box.addEventListener('click',doWork,true); 
+			box.addEventListener('mouseover',doWork,true); 
+			box.addEventListener('mouseenter',doWork,true); 
+			box.addEventListener('mouseout',doWork,true); 
+		} else if(typeof window.attachEvent === 'function') {
+			box.attachEvent('onclick',doWork,true);
+		}
+
+		console.log("All event handlers registered successfully!!");
+	};
+
+
+
+	function remove() {
+		var box = document.querySelectorAll('.box')[0];
+	
+		if(typeof window.removeEventListener === 'function') {
+			box.removeEventListener('click',doWork,true); 
+			box.removeEventListener('mouseover',doWork,true); 
+			box.removeEventListener('mouseenter',doWork,true); 
+			box.removeEventListener('mouseout',doWork,true); 
+		} else if(typeof window.detachEvent === 'function') {
+			box.detachEvent('onclick',doWork,true); 
+			box.detachEvent('onmouseover',doWork,true); 
+			box.detachEvent('onmouseenter',doWork,true); 
+			box.detachEvent('onmouseout',doWork,true); 
+		}
+
+		console.log("All event handlers removed successfully!!");
+
+	}
+
+	function doWork(evt) {
+		var div = document.createElement('div');
+		div.setAttribute('class','content'); 
+		div.innerHTML = `Event : ${evt.type}`;
+		div.innerHTML =  div.innerHTML + '<br/>' + `X : ${evt.clientX}`;
+		div.innerHTML =  div.innerHTML + '<br/>' + `Y : ${evt.clientY}`;
+		container.appendChild(div);
+	}
+	
+
+</script>
+</head>
+<body>
+	<button id='btn0' type='button'>Remove</button>
+	<br/>
+	<div class='box'>
+
+	</div>
+
+	<section class='container'>
+	
+	</section>
+
+</body>
+</html>

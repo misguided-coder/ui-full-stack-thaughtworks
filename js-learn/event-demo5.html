@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<style>
+	.container {
+		width : 600px;
+		height : 200px;
+		background-color : #c8c8c8;
+		margin : 20px auto;
+	}
+
+	.box {
+		border : 2px solid black;
+		margin : 20px auto;
+	}
+
+	.skyblue {
+		width : 300px;
+		height : 300px;
+		background-color : skyblue;
+	}
+
+	.orange {
+		width : 200px;
+		height : 200px;
+		background-color : orange;
+	}
+
+	.yellow {
+		width : 100px;
+		height : 100px;
+		background-color : yellow;
+	}
+
+	.btn {
+		display : block;
+		border-radius : 10px;
+		/* margin : 40px auto; */
+	}
+
+	.content {
+		color :  white; 
+		background-color : blue; 
+		font-size : 26px; 
+		border-bottom : 2px solid white;
+	}
+</style>
+<script>
+
+	window.onload = function () {
+		container = document.querySelectorAll('.container')[0];	
+		var box0 = document.querySelectorAll('.box.skyblue')[0];
+		var btn0 = document.querySelectorAll('.btn')[0];
+
+		document.addEventListener('click',function(evt) {
+			container.innerHTML = container.innerHTML + generateContent('body bubble',evt);
+		},false); 
+
+		box0.addEventListener('click',function(evt) {
+			container.innerHTML = container.innerHTML + generateContent('skyblue bubble',evt);
+		},false); 
+
+		box0.addEventListener('click',function(evt) {
+			container.innerHTML = container.innerHTML + generateContent('skyblue capture',evt);
+			changeColor(evt);
+		},true); 
+
+		btn0.addEventListener('click',function(evt) {
+			container.innerHTML = container.innerHTML + generateContent('btn 3 capture',evt);
+		},true); 
+
+		btn0.addEventListener('click',function(evt) {
+			container.innerHTML = container.innerHTML + generateContent('btn 1 bubble',evt);
+		},false); 
+
+		btn0.addEventListener('click',function(evt) {
+			container.innerHTML = container.innerHTML + generateContent('btn 2 bubble',evt);
+		},false); 
+
+		console.log("All event handlers registered successfully!!");
+	};
+
+
+	function changeColor(evt) {
+		document.body.style.backgroundColor = evt.target.value;
+	}
+
+	function generateContent(message,evt){
+		return `<div class='content'>${message} box click event. Target name is ${evt.target.getAttribute('class')}</div>`;
+	}
+	
+</script>
+</head>
+<body>
+	<div class='box skyblue'>
+		<div class='box orange'>
+			<div class='box yellow'>
+				<input class='btn' type='button' value='Hit Me' />	
+				<input class='btn' type='button' value='Red' />	
+				<input class='btn' type='button' value='Green' />	
+				<input class='btn' type='button' value='Gray' />	
+			</div>
+		</div>
+	</div>
+	<br />	<br />
+	<section class='container'>
+	
+	</section>
+
+</body>
+</html>

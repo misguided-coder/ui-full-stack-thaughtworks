@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<style>
+	.container {
+		display : flex;
+		flex-wrap : wrap;
+		width : 400px;
+		height : 200px;
+		background-color : #c8c8c8;
+		margin-top :10px;	
+	}
+</style>
+<script>
+
+	window.onload = function () {
+		var btn0 = document.querySelectorAll('.btn')[0];
+		var btn1 = document.querySelectorAll('.btn')[1];
+		var txt0 = document.querySelectorAll('.txt')[0];
+
+		if(typeof window.addEventListener === 'function') {
+			btn0.addEventListener('click',hello,true); //true capture phase
+			btn1.addEventListener('click',hello,true);
+			txt0.addEventListener('keydown',keyDown,true);
+			txt0.addEventListener('keypress',keyPress,true);
+			txt0.addEventListener('keyup',keyUp,true);
+		} else if(typeof window.attachEvent === 'function') {
+			btn0.attachEvent('onclick',hello,true); //true capture phase
+			btn1.attachEvent('onclick',hello,true); 
+			txt0.attachEvent('onkeydown',keyDown,true);
+			txt0.attachEvent('onkeypress',keyPress,true);
+			txt0.attachEvent('onkeyup',keyUp,true);
+		}
+
+		console.log("All event handlers registered successfully!!");
+	};
+
+	function hello (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = evt.clientX;
+		div.innerHTML =  div.innerHTML + '<br/>' + evt.clientY;
+		container.appendChild(div);
+	}
+
+	function keyDown (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = 'Key is down!!';
+		container.appendChild(div);
+	}
+
+	function keyPress (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = `${evt.keyCode} Key is pressed!!`;
+		container.appendChild(div);
+	}
+
+	function keyUp (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = 'Key is now released!!';
+		container.appendChild(div);
+	}
+</script>
+</head>
+<body>
+	<input class='btn' type='button' value='Hello'  />
+	<input class='btn' type='button' value='Hi' />
+	<input  class='txt' type='text' />
+
+	<section class='container'>
+	
+	</section>
+
+</body>
+</html>

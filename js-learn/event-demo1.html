@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<style>
+	.container {
+		display : flex;
+		flex-wrap : wrap;
+		width : 400px;
+		height : 200px;
+		background-color : #c8c8c8;
+		margin-top :10px;	
+	}
+</style>
+<script>
+	function hello (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		//div.innerHTML = evt.target.type;
+		//div.innerHTML = evt.target.value;
+		//div.innerHTML = evt.clientX;
+		//div.innerHTML =  div.innerHTML + '<br/>' + evt.clientY;
+		//div.innerHTML =  div.innerHTML + '<br/>' + evt.screenX;
+		//div.innerHTML =  div.innerHTML + '<br/>' + evt.screenY;
+		//div.innerHTML = evt.ctrlKey;
+		div.innerHTML = evt.shiftKey;
+		div.innerHTML =  div.innerHTML + '<br/>' + evt.ctrlKey;
+		container.appendChild(div);
+	}
+
+	function keyDown (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = 'Key is down!!';
+		container.appendChild(div);
+	}
+
+	function keyPress (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = `${evt.keyCode} Key is pressed!!`;
+		container.appendChild(div);
+	}
+
+	function keyUp (evt) {
+		var container = document.querySelectorAll('.container')[0];	
+		var div = document.createElement('div');
+		div.style.color = 'white'; 
+		div.style.backgroundColor = 'blue'; 
+		div.style.fontSize = '26px'; 
+		div.style.width = '100px'; 
+		div.innerHTML = 'Key is now released!!';
+		container.appendChild(div);
+	}
+</script>
+</head>
+<body>
+	<input type='button' value='Hello' onclick='hello(event);' />
+	<input type='button' value='Hi' onclick='hello(event);' />
+	<input type='text' onkeydown='keyDown(event);' onkeypress='keyPress(event);' onkeyup='keyUp(event);' />
+
+	<section class='container'>
+	
+	</section>
+
+</body>
+</html>

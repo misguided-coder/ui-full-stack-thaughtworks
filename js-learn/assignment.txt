@@ -1,4 +1,12 @@
-Write a program which will represent employee entity and will have employee
+1) Write a program which will display an image and once you hover on the image 
+   image should change to different image and once out image should be 
+   back to original.
+
+2) Create a slide show using 10 images and slide show will start when user 
+   clicks on start button and stop slideshow once user clicks on stop button.
+   and images should chage every 2 seconds only.
+
+3) Write a program which will represent employee entity and will have employee
 related properties like id,name,salary,desig,dept,email,phone and will have 
 below functionalities :
 
