@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Demo</title>
+<style>
+	#container {
+		width : 600px;
+		height : 200px;
+		background-color : #c8c8c8;
+		margin : 20px auto;
+		overflow : auto;
+	}
+
+	.box {
+		width : 100px;
+		height : 100px;
+		background-color : skyblue;
+		margin : 20px auto;
+	}
+
+	.content {
+		color :  white; 
+		background-color : blue; 
+		font-size : 26px; 
+		border-bottom : 2px solid white;
+	}
+</style>
+</head>
+<body>
+	<div class='box'>
+	</div>
+	<br/><br/>
+	<section id='container'>
+	</section>
+<script>
+	if(typeof window.console === 'object') {
+		window.console = document.getElementById('container');
+	}
+
+	var box = document.querySelectorAll('.box')[0];
+	box.addEventListener('click',function (evt) {
+		console.innerHTML = console.innerHTML + "<div class='content'>Click custom event!!!!</div>";		
+	},false);
+
+	box.addEventListener('mouseover',function (evt) {
+		console.innerHTML = console.innerHTML + "<div class='content'>Mouseover custom event!!!!</div>";		
+	},false);
+	
+	//var event = new Event('click',{bubbles:true,cancelable:true});
+	//var event = new MouseEvent('click',{clientX:20,clientY:40,bubbles:true,cancelable:true});
+	//box.dispatchEvent(event);
+	//event = new MouseEvent('mouseover',{clientX:20,clientY:40,bubbles:true,cancelable:true});
+	event = new CustomEvent('click',{detail:v,clientX:20,clientY:40,bubbles:true,cancelable:true});
+	console.innerHTML = console.innerHTML + "<div class='content'>Custom event is ready!!!!</div>";		
+	box.dispatchEvent(event);
+	console.innerHTML = console.innerHTML + "<div class='content'>Custom event is dispatched to box element!!!!</div>";		
+		
+		
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexible Box/Layout Model Demo</title>
+	<style>
+		.row {
+			display : flex;
+			flex-flow : row nowrap;
+			/*horizontal alignment of items */
+			justify-content : space-between;    /* space-around,center,flex-start,flex-end */
+			background-color : lightgray;
+			border : 1px solid black;
+			min-height : 200px;
+			max-height : 400px;
+		}	
+
+		.column {
+			background-color : skyblue;
+			color : white;
+			width : 100px;		
+			font-size : 20px;
+			margin: 5px;
+			text-align : center;
+			padding-top : 20px;
+		}	
+
+	</style>
+</head>
+<body>
+	<div class='row'>
+		<div class='column'>COOL Guy 1</div>
+		<div class='column'>COOL Guy 2</div>
+		<div class='column'>COOL Guy 3</div>
+		<div class='column'>COOL Guy 4</div>
+	</div>		
+</body>
+</html>

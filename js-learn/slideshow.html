@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide Show Demo</title>
+<style>
+	.slide-show {
+		width : 700px;
+		height : 400px;
+		/*background-color : #c8c8c8;*/
+		margin : 20px auto;
+		padding : 20px;
+		vertical-align : middle;
+	}
+
+	.slide-image {
+		width : 500px;
+		height : 300px;
+	}
+
+</style>
+</head>
+<body>
+<section class='slide-show'>
+	<div class='row'>
+		<div class='column'>	
+			<figure class='slide'>
+				<h3 class='slide-header'></h3>
+				<img class='slide-image' src='images/nature-image-10.jpeg'  />
+				<figcaption class='slide-into'></figcaption>
+			</figure>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='column'>	
+			<input class='btn btn-start' type='button' value='Start' />
+			<input class='btn btn-stop' type='button' value='Stop' />
+		</div>
+	</div>
+	<div class='row'>
+		<div class='column'>	
+			<progress value=0 min=0 max=100 class='progress-bar'></progress>
+		</div>
+	</div>
+</section>
+<script>
+	
+	document.addEventListener('slideshowprogress',function(evt) {
+		var progress0 = document.querySelectorAll('.progress-bar')[0];
+		console.log(evt.detail);
+		progress0.value = evt.detail.current * 10;
+	});
+
+	var image0 = document.querySelectorAll('.slide-image')[0];
+
+	var buttonList = document.querySelectorAll('.btn');
+	var btn0 = buttonList[0];
+	var btn1 = buttonList[1];
+	var counter = 1;
+
+	btn0.addEventListener('click',function () {
+		clock = window.setInterval(function() {
+			image0.setAttribute('src',`images/nature-image-${counter++}.jpeg`);		
+			var finishEvent = new CustomEvent('slideshowprogress',{detail:{current:counter}});	
+			document.dispatchEvent(finishEvent);
+
+			if(counter > 10) {
+				counter = 1;
+			}
+
+		},2000);
+	});
+
+	btn1.addEventListener('click',function () {
+		window.clearInterval(clock);	
+		var stopEvent = new CustomEvent('slideshowstop');	
+		document.dispatchEvent(stopEvent);
+
+	});
+
+</script>
+</body>
+</html>
