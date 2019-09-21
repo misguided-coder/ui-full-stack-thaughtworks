@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Async request Demo</title>
+<script>
+</script>
+</head>
+<body>
+	<input id='action' type='button' value='Load Cars' />	
+	<br/>	
+	<section class='content-region'>
+	</section>
+
+<script>
+	var contentRegion = document.querySelectorAll('.content-region')[0];
+	var action = document.getElementById('action');
+	action.addEventListener('click',function() {
+		var promise = fetch('data/cars.json');	 //returns Promise object
+			
+		promise.then(function(res) {
+			contentRegion.innerHTML = res.status;	
+			contentRegion.innerHTML = contentRegion.innerHTML + res.statusText;	
+			contentRegion.innerHTML = contentRegion.innerHTML + res.headers;	
+			console.log(res.json());
+		});
+		
+		promise.catch(function(err) {
+			contentRegion.innerHTML = '<h2>Communication failure with server!!</h2>';	
+		});
+
+		console.log("Async Request sent to server!!!!");		
+	});
+</script>
+</body>
+</html>

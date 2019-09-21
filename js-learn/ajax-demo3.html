@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Async request Demo</title>
+<script>
+</script>
+</head>
+<body>
+	<input id='action' type='button' value='Load Cars' />	
+	<br/>	
+	<section class='content-region'>
+	</section>
+
+<script>
+	var contentRegion = document.querySelectorAll('.content-region')[0];
+	var action = document.getElementById('action');
+	action.addEventListener('click',function() {
+		fetch('data/cars.json')
+	   	   .then(function(res) {
+			return res.json();
+     		   }).then(function(data) {
+			displayData(data);
+     		   }).catch(function(err) {
+			contentRegion.innerHTML = '<h2>Error</h2>';	
+		   });
+
+		console.log("Async Request sent to server!!!!");		
+	});
+
+
+	function createNode(nodeName) {
+		return document.createElement(nodeName);
+	}	
+
+	function append(parentNode,childNode) {
+		parentNode.appendChild(childNode);
+	}	
+
+	function displayData(cars) {
+		var table = document.createElement('table');
+		contentRegion.appendChild(table);
+		var tbody = document.createElement('tbody');
+		table.appendChild(tbody);
+		cars.forEach(function(car){
+			var tr = createNode('tr');
+			append(tbody,tr);
+			for(var value of car) {
+				var td = createNode('td');
+				td.innerHTML = value;
+				append(tr,td);
+			}
+			
+			var img = createNode('img');
+			img.setAttribute('src',`images/${car.logo}`);
+			img.width = 70;
+			img.height = 70;
+			//document.querySelector('tr td:last-child')[0].appendChild(img);	
+		});
+		
+	}
+</script>
+</body>
+</html>

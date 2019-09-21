@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Async request Demo</title>
+<script>
+</script>
+</head>
+<body>
+	<input id='action' type='button' value='Load Cars' />	
+	<br/>	
+	<section class='content-region'>
+	</section>
+
+<script>
+	var contentRegion = document.querySelectorAll('.content-region')[0];
+	var action = document.getElementById('action');
+	action.addEventListener('click',function() {
+		fetch('data/cars.json')
+	   	   .then(function(res) {
+			return res.json();
+     		   }).then(function(data) {
+			displayData(data);
+     		   }).catch(function(err) {
+			contentRegion.innerHTML = '<h2>Error</h2>';	
+		   });
+
+		console.log("Async Request sent to server!!!!");		
+	});
+
+
+	function createNode(nodeName) {
+		return document.createElement(nodeName);
+	}	
+
+	function append(parentNode,childNode) {
+		parentNode.appendChild(childNode);
+	}	
+
+	function displayData(cars) {
+		var table = document.createElement('table');
+		contentRegion.appendChild(table);
+		var tbody = document.createElement('tbody');
+		table.appendChild(tbody);
+		cars.forEach(function(car){
+			var tr = document.createElement('tr');
+			var td1 = document.createElement('td');
+			td1.innerHTML = car.vin;
+			var td2 = document.createElement('td');
+			td2.innerHTML = car.model;
+			var td3 = document.createElement('td');
+			td3.innerHTML = car.make;
+			var td4 = document.createElement('td');
+			td4.innerHTML = car.price;
+			var td5 = document.createElement('td');
+			td5.innerHTML = car.color;
+			var td6 = document.createElement('td');
+			var img = document.createElement('img');
+			img.setAttribute('src',`images/${car.logo}`);
+			img.width = 70;
+			img.height = 70;
+			td6.appendChild(img);
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			tr.appendChild(td5);
+			tr.appendChild(td6);
+			tbody.appendChild(tr);
+		});
+		
+	}
+</script>
+</body>
+</html>

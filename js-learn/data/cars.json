@@ -1,0 +1,7 @@
+[
+	{"vin":101,"model":"X6","make":"BMW","price":4000000.00,"color":"yellow","logo":"x6.jpg"},
+	{"vin":102,"model":"X2","make":"BMW","price":78000000.00,"color":"yellow","logo":"x2.jpg"},
+	{"vin":103,"model":"A1","make":"Audi","price":5600000.00,"color":"black","logo":"a1.jpg"},
+	{"vin":104,"model":"Q5","make":"Audi","price":3400000.00,"color":"yellow","logo":"q5.jpg"},
+	{"vin":105,"model":"CLA","make":"Merc","price":9000000.00,"color":"red","logo":"cla.jpg"}
+]
