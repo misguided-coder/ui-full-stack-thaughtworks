@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	class Employee {
+		
+		constructor () {
+			document.write("Inside Employee constructor!!!!");
+			document.write("<br />");				
+			this.name = 'Bill Gates';
+			this.salary = 340000.00;
+		}
+	}
+
+	var emp = new Employee();
+
+	document.write(emp.name);
+	document.write("<br />");				
+
+	document.write(emp.salary);
+	document.write("<br />");				
+
+	document.write(emp);
+	document.write("<br />");				
+
+	document.write(typeof emp);
+	document.write("<br />");				
+
+	document.write(emp instanceof Employee);
+	document.write("<br />");				
+
+	document.write(emp.constructor);
+	document.write("<br />");				
+	
+</script>
+</head>
+<body>
+</body>
+</html>

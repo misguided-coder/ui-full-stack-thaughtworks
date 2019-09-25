@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	var colors = new Set();
+	colors.add('Red');
+	colors.add('Green');
+	colors.add('Blue');
+	colors.add('Yellow');
+	colors.add('Red');
+
+
+
+	for(var val of colors.values()){
+		document.write(val);
+		document.write("<br />");				
+	}
+
+
+	var weather = new Map();
+	weather.set('Delhi',34);
+	weather.set('Pune',24);
+	weather.set('Mumbai',46);
+	weather.set('Dehradun',20);
+	
+	document.write(weather.get('Pune'));
+	document.write("<br />");				
+
+
+	document.write(weather.has('Mumbai'));
+	document.write("<br />");				
+
+	document.write(weather.has('Jaipur'));
+	document.write("<br />");				
+
+	document.write(weather.delete('Pune'));
+	document.write("<br />");				
+
+	document.write(weather.get('Pune'));
+	document.write("<br />");				
+
+
+	document.write(weather.get('Mumbai'));
+	document.write("<br />");				
+
+	weather.set('Mumbai',76);
+
+	document.write(weather.get('Mumbai'));
+	document.write("<br />");				
+
+	for(var key of weather.keys()){
+		document.write(key);
+		document.write("<br />");				
+	}
+
+	for(var val of weather.values()){
+		document.write(val);
+		document.write("<br />");				
+	}
+	
+	for(var entry of weather.entries()){
+		document.write(entry);
+		document.write("<br />");				
+	}
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

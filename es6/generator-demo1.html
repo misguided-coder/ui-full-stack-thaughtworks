@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	//generator declaration
+	function* values() {
+		yield 100;
+		yield 200;
+		yield 300;
+		yield 400;
+		yield 500;
+		yield 600;
+	}
+
+
+	var gen = values();
+
+	var obj = gen.next();
+
+	while(!obj.done) {
+
+		document.write(obj.value);
+		document.write("<br />");				
+	
+		obj = gen.next();
+	}
+
+	/*document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");*/				
+
+	/*let obj = gen.next();	
+
+	document.write(obj.value);
+	document.write("<br />");				
+
+	document.write(obj.done);
+	document.write("<br />");*/				
+	
+</script>
+</head>
+<body>
+</body>
+</html>

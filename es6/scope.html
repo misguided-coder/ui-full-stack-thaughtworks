@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+		
+	if(true) {
+		var i = 10;
+	
+		document.write(i);
+		document.write("<br />");				
+	}
+
+	document.write(i);
+	document.write("<br />");				
+
+	if(true) {
+		let j = 20; //block level scope
+		j = 50;
+
+		document.write(j);
+		document.write("<br />");				
+	}
+
+	//document.write(j); //will not work
+	//document.write("<br />");				
+
+	if(true) {
+		const k = 30;	
+		
+		document.write(k);
+		document.write("<br />");				
+	}
+
+	//document.write(k); //will not work
+	//document.write("<br />");				
+
+</script>
+</head>
+<body>
+</body>
+</html>

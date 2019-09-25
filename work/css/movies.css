@@ -1,0 +1,93 @@
+@import 'reset.css';
+
+main {
+	width : 95%;
+	display : flex;
+	flex-flow : row nowrap; 
+	margin : auto;
+}
+
+.left-column {
+	flex : 70%;
+}
+
+.left-column .banner {
+	background-color : #171717;
+	color : white;
+	font-size : 20px;
+}
+
+.movie-list {
+	display :flex;
+	flex-flow : row wrap; 
+
+}
+
+.movie-list section {
+	flex : 25%;
+	max-height : 200px;
+}
+
+.movie-card-header {
+	background-color: #454A4C;
+	color : white;	
+}
+
+.movie-card-header ul {
+	list-style:none;
+}
+
+.movie-card-header span:first-child {
+	font-size:16px;
+}
+
+.movie-card-header span:nth-child(2) {
+	font-size:12px;
+}
+
+.movie-card-header span:last-child {
+	font-size:8px;
+}
+
+.movie-list .movie-card {
+	background-color : #212121;	
+	min-height : 200px;
+	max-height : 200px;
+	border-right : 1px solid gray;
+}
+
+.right-column {
+	flex : 30%;
+	flex-flow : column;
+			
+}
+
+.right-column  .empty-placeholder {
+	min-height : 300px;
+	max-height : 300px;
+}
+
+.right-column .banner {
+	background-color: #454A4C;
+	max-height : 10%;
+}
+
+.right-column .banner > h2 {
+	color : white;
+	font-size: 16px;
+}
+
+.right-column .banner > p {
+	font-size: 12px;
+	color: #A6A6A6;
+}
+
+.right-column .movie-detail {
+	max-height : 40%;
+}
+
+.movie-detail li {
+	list-style : none;
+	line-height : .4em;
+}
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	var age = 30;
+	//var text = "Hello Mr You are "+age+" yrs old.";
+	var text = 'Hello Mr You are '+age+' yrs old.';
+
+	//string template	
+	var text = `Hello Mr You are ${age} yrs old.`;
+	
+	document.write(text);
+	document.write("<br />");				
+
+	var name = 'Raju';
+	var week = '3rd'
+	var country = 'India';
+
+	//multi line string
+	var para = `Hello Mr ${name} How are you. Lets plan for holidays
+                    and lets plan for the ${week} week and 
+                    our destinatin will be south part of ${country}
+		    and will be spending there almost ${Math.floor(Math.random()*10)} days.`;
+
+	document.write(para);
+	document.write("<br />");				
+
+</script>
+</head>
+<body>
+</body>
+</html>

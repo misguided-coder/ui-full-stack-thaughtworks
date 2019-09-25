@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	class Employee {
+		
+		constructor (name,salary) {
+			document.write("Inside Employee constructor!!!!");
+			document.write("<br />");				
+			this.name = name;
+			this.salary = salary;
+		}
+
+
+		static displayCompany() {
+			document.write("ThoughtWorks");
+			document.write("<br />");				
+		}
+
+		updateSalary(percentage) {
+			this.salary = this.salary + (this.salary*percentage);
+		}
+
+
+		info() {
+			document.write(`Name : ${this.name}`);
+			document.write("<br />");				
+
+			document.write(`Salary : ${this.salary}`);
+			document.write("<br />");				
+		}
+	}
+
+
+	Employee.displayCompany();
+
+	var emp1 = new Employee('Raj',12000.00);
+	var emp2 = new Employee('Ram',42000.00);
+
+	emp1.updateSalary(.40);
+	emp2.updateSalary(.20);
+
+	emp1.info();
+	emp2.info();
+
+	/*document.write(emp1.name);
+	document.write("<br />");				
+
+	document.write(emp1.salary);
+	document.write("<br />");				
+
+	document.write(emp2.name);
+	document.write("<br />");				
+
+	document.write(emp2.salary);
+	document.write("<br />");*/				
+
+	
+</script>
+</head>
+<body>
+</body>
+</html>

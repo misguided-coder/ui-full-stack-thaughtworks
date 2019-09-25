@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Form Validation</title>
+<style>
+	.error {
+		font-weight : bold;
+		color : red;
+	}
+
+</style>
+</head>
+<body>
+	<header>
+		<h1>Users Land</h1>
+	</header>
+	<main>
+		<form action='api/user/create' method='GET' name='user-form'>
+			<label for='user-id'>ID : </label>
+			<span class='error' id='user-id-error' hidden>User ID is required!!</span>
+			<input aria-labeledBy='Enter you name' type='text' name='user-id' id='user-id' aria-describedby='user-id-error'  /><br/>
+			<label for='user-name'>Name : </label>
+			<span class='error' id='user-name-error' hidden>User Name is required!!</span>
+			<input type='text' name='user-name' id='user-name' value='raj' /><br/>
+			<label for='gender'>Gender : </label>
+			<span class='error' id='gender-error' hidden>Please select one option below!!</span>
+			<input type='radio' name='gender' value='M' id='gender' />Male
+			<input type='radio' name='gender' value='F' id='gender' />Female<br/>
+			<input type='button' value='Save' class='btn-action-save' />
+		</form>
+	</main>
+<script>
+
+	var userForm = document.forms['user-form'];
+	document.querySelectorAll('.btn-action-save')[0].addEventListener('click',validateForm);
+
+	/*function validateForm() {
+		var valid = true;
+		console.log("Validation in progress!!!!!");
+		var userId = userForm.elements['user-id'];
+		if(userId.value === '') {	
+			valid = false;
+			document.getElementById(`${userId.name}-error`).hidden = false;
+		}
+
+		if(valid)
+			userForm.submit(); 	
+	}*/
+
+
+	function validateForm() {
+		console.log(this);
+		var valid = true;
+		console.log("Validation in progress!!!!!");
+		var userId = userForm.elements['user-id'];
+		if(userId.value === '') {	
+			valid = false;
+			document.getElementById(`${userId.name}-error`).hidden = false;
+		}
+
+		if(valid)
+			userForm.submit(); 	
+	}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	//Example 4
+	var arr = [65,2,8,10];
+
+	function doWork(a,b,c,d) {
+		document.write(a-b-c-d);
+		document.write("<br />");			
+	}
+
+	doWork(...arr);
+	doWork(20,4,2,3);
+	document.write("====================");
+	document.write("<br />");			
+	
+	//Example 3
+	var arr = [4,6,8,23,65,2,89];
+
+	document.write(Math.min(...arr));
+	document.write("<br />");			
+
+	document.write(Math.min(4,6,8,23,65,2,89));
+	document.write("<br />");			
+
+	document.write("====================");
+	document.write("<br />");			
+	
+	
+	
+	//Example 2
+	var arr1 = [1,2,3];
+	var arr2 = [...arr1];
+
+	arr2.push(4);
+
+	document.write(arr1);
+	document.write("<br />");			
+
+	document.write(arr2);
+	document.write("<br />");			
+
+	document.write("====================");
+	document.write("<br />");			
+
+
+	//Example 1
+	var arr1 = [1,2,3];
+	var arr2 = [4,5,6];
+	//var arr3 = arr1.concat(arr2);
+	var arr3 = [...arr1,...arr2];
+
+	document.write(arr3.length);
+	document.write("<br />");			
+
+	document.write("====================");
+	document.write("<br />");			
+
+	var mobiles = {model:'Vivo Reno',price:34000.00};
+
+	//New way
+	var {model,price} = {...mobiles};
+
+	document.write(model);
+	document.write("<br />");				
+	document.write(price);
+	document.write("<br />");				
+
+	document.write("====================");
+	document.write("<br />");			
+
+
+	//Old way
+	var m = mobiles.model;
+	var p = mobiles.price;
+
+	document.write(m);
+	document.write("<br />");				
+	document.write(p);
+	document.write("<br />");				
+
+	document.write("====================");
+	document.write("<br />");			
+
+
+	var numbers = [5,8,2,4,9,7];
+
+	//new way of spreading array into individual values using spread operator
+	var [a,b,,d,,f] = [...numbers];
+
+	document.write(a);
+	document.write("<br />");				
+	document.write(b);
+	document.write("<br />");				
+	document.write(c);
+	document.write("<br />");				
+	document.write(d);
+	document.write("<br />");				
+	document.write(e);
+	document.write("<br />");				
+	document.write(f);
+	document.write("<br />");				
+
+	document.write("====================");
+	document.write("<br />");			
+
+
+	var array = [5,8,2,4,9,7];
+
+	//Old way of spreading array into individual values
+	var a = array[0];	
+	var b = array[1];	
+	var c = array[2];	
+	var d = array[3];	
+	var e = array[4];	
+	var f = array[5];	
+
+
+	document.write(a*a);
+	document.write("<br />");				
+	document.write(b*b);
+	document.write("<br />");				
+	document.write(c*c);
+	document.write("<br />");				
+	document.write(d*d);
+	document.write("<br />");				
+	document.write(e*e);
+	document.write("<br />");				
+	document.write(f*f);
+	document.write("<br />");				
+
+	document.write("====================");
+	document.write("<br />");				
+
+</script>
+</head>
+<body>
+</body>
+</html>

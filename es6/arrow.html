@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+
+	//fat arrow function
+	//var diff = (arg1,arg2) => { return arg1 - arg2; };
+	//var diff = (arg1,arg2) => arg1-arg2;
+	var diff = arg1 => 100-arg1;
+
+	alert(diff(20,2));
+
+	//fat arrow function
+	var sum = (arg1,arg2) => {
+		return arg1+arg2;
+	};
+
+	alert(sum(2,2));
+
+
+	//fat arrow function
+	var hi = name => {
+		document.write(`Hi ${name}`);
+		document.write("<br />");				
+	};
+
+	hi('Rohan');
+
+
+	//fat arrow function
+	var hi = () => {
+		document.write(`Hi Raj`);
+		document.write("<br />");				
+	};
+
+	hi();
+
+
+	function Weather() {
+		this.city = 'Delhi';
+		
+		this.report  = function (){
+			setInterval(() => {
+				document.write(`${this.city} todays's weather is ${Math.floor(Math.random()*35)} deg temperature!!`);
+				document.write("<br/>");	
+			},2000);
+		}
+	}	
+
+	//var weather = new Weather();
+	//weather.report(); 		
+	
+
+	//fat arrow function
+	var hi = (name) => {
+		document.write(`Good Night ${name}`);
+		document.write("<br />");				
+	};
+
+	hi('Jaggu');
+
+	var hello = function (name) {
+		document.write(`Good Evening ${name}`);
+		document.write("<br />");				
+	};
+
+	hello('Jaggu');
+
+
+	function greet(name) {
+		document.write(`Good Morning ${name}`);
+		document.write("<br />");				
+	}
+	
+	greet('Jaggu');	
+	
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Closure Demo</title>
+<script>
+
+	function gen() {
+		var seed = 500;
+		return function () {
+			document.write(`Unique number : ${Math.floor(Math.random()*seed)} `);
+			document.write("<br/>");
+		}			
+	}	
+
+	var seq = gen();
+	
+	document.write("=========================");
+	document.write("<br/>");
+
+	seq();
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	seq();
+
+	document.write("=========================");
+	document.write("<br/>");
+
+	seq();
+				
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Form Validation</title>
+<style>
+	.error {
+		font-weight : bold;
+		color : red;
+	}
+
+</style>
+<script>
+
+	/*function validateForm() {
+		console.log("Validation in progress!!!!!");
+		var userIdField = document.getElementById('user-id');		
+		console.log(document.forms['user-form']);
+		console.log(document.forms['user-form'].elements.length);
+		console.log(document.forms['user-form'].elements[0]);
+		console.log(document.forms['user-form'].elements['user-id']);
+		if(userIdField.value === '') {	
+			document.getElementById('user-id-error').hidden = false;
+			return false;
+		}
+		return true;
+	}*/
+
+	/*function validateForm() {
+		console.log("Validation in progress!!!!!");
+		var userForm = document.forms['user-form'];
+		var userId = userForm.elements['user-id'];
+		if(userId.value === '') {	
+			document.getElementById(`${userId.name}-error`).hidden = false;
+			return false;
+		}
+		return true;
+	}*/
+	
+	window.onload = function() {
+		messages = {};
+		var spanArray = document.getElementsByTagName('span');
+		for(var idx = 0;idx <spanArray.length;idx++) {
+			messages[spanArray[idx].id] = spanArray[idx];
+		}
+		console.log(messages);
+	};
+	
+
+	/*function validateForm() {
+		console.log("Validation in progress!!!!!");
+		var userForm = document.forms['user-form'];
+		var userId = userForm.elements['user-id'];
+		if(userId.value === '') {	
+			messages[`${userId.name}-error`].hidden = false;
+			return false;
+		}
+		return true;
+	}*/
+	
+
+	function validateForm(form) {
+		console.log("Validation in progress!!!!!");
+		//var userForm = document.forms['user-form'];
+		var userForm = form;
+		var total = userForm.elements.length;
+		var fields = userForm.elements;
+		var valid = true;
+		for(var count = 0;count < total;count++) {
+			var field = fields[count];
+			console.log(`Validation done for ${field.name}`);
+			if(field.type === 'text' && field.value === '') {
+				valid = false;
+				messages[`${field.name}-error`].hidden = false;
+				break;
+			} else if(field.type === 'radio' && field.checked == false ) {
+				valid = false;
+				messages[`${field.name}-error`].hidden = false;
+				break;
+			}	
+		}
+
+		return valid;
+	}
+
+</script>
+</head>
+<body>
+	<header>
+		<h1>Users Land</h1>
+	</header>
+	<main>
+		<form onsubmit='return validateForm(this);' action='api/user/create' method='GET' name='user-form'>
+			<label for='user-id'>ID : </label>
+			<span class='error' id='user-id-error' hidden>User ID is required!!</span>
+			<input type='text' name='user-id' id='user-id'  /><br/>
+			<label for='user-name'>Name : </label>
+			<span class='error' id='user-name-error' hidden>User Name is required!!</span>
+			<input type='text' name='user-name' id='user-name' value='raj' /><br/>
+			<label for='gender'>Gender : </label>
+			<span class='error' id='gender-error' hidden>Please select one option below!!</span>
+			<input type='radio' name='gender' value='M' id='gender' />Male
+			<input type='radio' name='gender' value='F' id='gender' />Female<br/>
+			<input type='submit' value='Register' />
+		</form>
+	</main>
+</body>
+</html>

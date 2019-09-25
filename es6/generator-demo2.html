@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	function* unique(seed,range) {
+		for(;seed < range;seed++) {
+			yield Math.floor((Math.random()+seed)*range);
+		}
+	}
+
+
+	var gen = unique(500,520);
+
+	for(var val of gen) {
+		document.write(val);
+		document.write("<br />");				
+	}
+
+	/*document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");				
+
+	document.write(gen.next().value);
+	document.write("<br />");*/				
+	
+</script>
+</head>
+<body>
+</body>
+</html>

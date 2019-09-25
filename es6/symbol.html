@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+
+	//GOOD VALUE MATCHING	
+	var BLUE_JEANS = Symbol('blue');
+	var RED_JEANS = Symbol('red');
+	var GREEN_JEANS = Symbol('green');
+	var RED_SHIRT = Symbol('red');
+
+	chooseJeansColor(RED_SHIRT);
+
+	function chooseJeansColor(color) {
+
+		switch(color) {
+			case RED_JEANS :
+				document.write("Sun is red");
+				document.write("<br />");			
+				break;
+			case BLUE_JEANS :
+				document.write("Blue is cool");
+				document.write("<br />");			
+				break;
+			case GREEN_JEANS :
+				document.write("Green is peaceful");
+				document.write("<br />");			
+				break;
+			default :
+				document.write("Unknown color");
+				document.write("<br />");			
+		}
+	}
+
+
+
+	//BAD VALUE MATCHING	
+	var BLUE_JEANS = 'blue';
+	var RED_JEANS = 'red';
+	var GREEN_JEANS = 'green';
+	var RED_SHIRT = 'red';
+
+	chooseJeans(RED_SHIRT);
+
+	function chooseJeans(color) {
+
+		switch(color) {
+			case 'red' :
+				document.write("Sun is red");
+				document.write("<br />");			
+				break;
+			case 'blue' :
+				document.write("Blue is cool");
+				document.write("<br />");			
+				break;
+			case 'green' :
+				document.write("Green is peaceful");
+				document.write("<br />");			
+				break;
+			default :
+				document.write("Unknown color");
+				document.write("<br />");			
+		}
+	}
+
+
+	document.write("====================");
+	document.write("<br />");			
+
+
+	//factory function will always return unique value of type Symbol
+	//var red = Symbol(); 
+	//var green = Symbol();
+
+	var red = Symbol('red'); 
+	var green = Symbol('green');
+
+	document.write(red == green);
+	document.write("<br />");			
+
+	document.write(red.toString());
+	document.write("<br />");			
+
+	document.write(green.toString());
+	document.write("<br />");			
+
+	document.write(typeof red);
+	document.write("<br />");			
+	
+	document.write("====================");
+	document.write("<br />");			
+
+</script>
+</head>
+<body>
+</body>
+</html>

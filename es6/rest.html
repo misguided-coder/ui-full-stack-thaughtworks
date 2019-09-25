@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES6 Demo</title>
+<script>
+
+	function doSum(arg1,arg2,...args) {
+		var rs = 0;
+		for(var i=0;i<args.length;i++) {
+			rs += args[i];
+		}
+		document.write(`SUM : ${arg1+arg2+rs}`);
+		document.write("<br />");				
+	}
+	
+	doSum(23,4,12);
+	doSum(23,4,12,12);
+	doSum(23,4,12,12,9,5,3);
+	doSum(23,4,12,12,9,5,3,90,32);
+
+	function sum(a,b,c) {
+		document.write(`SUM : ${a+b+c}`);
+		document.write("<br />");				
+	}
+	
+	sum(23,4,12);
+	
+</script>
+</head>
+<body>
+</body>
+</html>
