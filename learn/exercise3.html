@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Feedback Rating System</title>
+	<meta charset="UTF-8">
+ 	<meta name="description" content="It is all about getting good rating">
+	<meta name="keywords" content="Feedback,Cooker,Rating,Cookware,Kitchen,Utensils">
+	<meta name="author" content="Bill Gates">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='css/feedback.css' />
+</head>
+<body>
+	<section class='page'>
+		<header class='page__header'>
+			<h1 tabindex=0 role='banner' class='page__title'>The Hawkings Cookware Pvt. Ltd.</h1>
+			<hr/>
+			<nav role='navigation' class='menubar'>
+				<ul role='menu' class='menu'>
+					<li role='menuitem' class='menu__item'>
+						<a tabindex=0 class='menu__link' href='javascript:void(0)' hreflang='en' type='text/html'>Register Feedback</a>
+					</li>
+					<li role='menuitem' class='menu__item'>
+						<a tabindex=0 class='menu__link' href='javascript:void(0)' hreflang='en' type='text/html'>Average Feedback</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+	</section>
+	<article class='article article__capture__feedback' style='display:none'>
+		<header>
+			<h3>Please give your feed about our Pressure Cooker by choosing one the below options.</h3>
+		</header>
+		<form name='feedback-form'>
+			<button data-rating='1' type='button' class='btn'>Very Poor(1)</button>
+			<button data-rating='2' type='button' class='btn'>Poor(2)</button>
+			<button data-rating='3' type='button' class='btn'>Good(3)</button>
+			<button data-rating='4' type='button' class='btn'>Very Good(4)</button>
+			<button data-rating='5' type='button' class='btn'>Excellent(5)</button>
+		</form>
+	</article>
+	<article class='article article__show__feedback'  style='display:none'>
+		<p class='content-feedback'>Average feedback of Pressure cooker given by total <b class='total-users'>10</b> users is <span class='average-feedback'>4.6</span></p>
+	</article>
+<script src='js/dom.js'></script>
+<script src='js/events.js'></script>
+<script src='js/feedback.js'></script>
+</body>
+</html>
