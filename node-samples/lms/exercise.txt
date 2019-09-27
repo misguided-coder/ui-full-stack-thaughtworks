@@ -1,0 +1,32 @@
+module 1 book will hold book info
+	isbn
+	title
+	price
+	author
+module 2 library
+	adding books
+	deleting books
+	listing books
+
+	adding members
+	listing members
+
+	issue book to member 
+	show issued books
+	show available books
+
+module 3 member will hold member info
+	id
+	name
+	age
+	phone
+	email
+	type (silver/gold/platinum)
+
+	and below functionality
+		upgrade member type
+		upgrade member phone
+		upgrade member email
+			
+module 4 main
+	doing library activities from here	
