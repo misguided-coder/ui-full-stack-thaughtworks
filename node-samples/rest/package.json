@@ -1,0 +1,15 @@
+{
+  "name": "rest",
+  "version": "1.0.0",
+  "description": "A simple App",
+  "keywords": [
+    "rest",
+    "API",
+    "services"
+  ],
+  "author": "Ritesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
