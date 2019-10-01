@@ -1,0 +1,24 @@
+import {Component} from "@angular/core";
+
+@Component({
+	selector:'weather',
+	template:`<section>
+			<h1>{{title}}</h1>
+			<hr/>			
+			<h1>City : Pune</h1>
+			<h1>Max {{weatherData.get('Pune').split(',')[0]}} and Min {{weatherData.get('Pune').split(',')[1]}} temprature on : {{currentDate}} day</h1>
+		</section>`
+})
+export class WeatherComponent {
+
+	title = 'Everday Weather Report';
+	currentDate = new Date();
+	weatherData:Map<String,String> = new Map();
+
+	constructor() {
+		this.weatherData.set('Pune','30,25');
+		this.weatherData.set('Delhi','50,40');
+		this.weatherData.set('Mumbai','43,28');
+		this.weatherData.set('Haridwar','40,20');
+	}
+}

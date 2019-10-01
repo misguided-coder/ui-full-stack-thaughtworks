@@ -1,0 +1,18 @@
+export class Address {
+
+	houseNo:string;
+	society:string;
+	street:string;
+	city:string;
+	state:string;
+	country:string;
+
+	constructor(houseNo,society,street,city,state,country) {
+		this.houseNo = houseNo;
+		this.society = society;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+	}	
+}
