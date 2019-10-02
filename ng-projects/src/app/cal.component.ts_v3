@@ -28,11 +28,17 @@ export class CalComponent {
 	firstValue:number = 20;
 	secondValue:number = 10;
 	result:number = 30;
+	calService:CalService;
+	quoteService:QuoteService;
+	timeService:TimeService;
 	currentQuote:string;
 	currentTime:string;
 
-	constructor(private calService:CalService,private quoteService:QuoteService,private timeService:TimeService) {	
+	constructor(a:CalService,b:QuoteService,c:TimeService) {	
 		console.log('Inside CalComponent constructor()!!!');
+		this.calService = a;		
+		this.quoteService = b;		
+		this.timeService = c;		
 	}
 
 	//event handlers

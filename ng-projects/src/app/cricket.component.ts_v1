@@ -1,0 +1,32 @@
+import { Component,EventEmitter,Output } from '@angular/core';
+
+import { QuoteService } from "./quote.service";
+
+@Component({
+  //providers: [ QuoteService ], 
+  selector: 'cricket',
+  template: `<section>
+		<h2>{{title}}</h2>
+		<h3>{{currentQuote}}</h3>
+		Member Name : <input type='text' [(ngModel)]='name' />		
+		<input type='button' (click)='addMember();' value='Add Member' />		
+	</section>`,
+})
+export class CricketComponent {
+  title = '20:20 Cricket Match';
+  name:string = 'Kapil Dev';
+  currentQuote:string;
+
+  constructor(private quoteService:QuoteService) {
+	this.currentQuote = this.quoteService.next();
+  }
+
+  @Output()	
+  memberAdded = new EventEmitter();
+
+  addMember() {
+	console.log('Inside addMember!!');	
+	this.memberAdded.emit({memberName:this.name,ranking:10});
+  }
+
+}

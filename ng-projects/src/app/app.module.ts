@@ -1,46 +1,44 @@
-import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
-import {HelloComponent} from "./hello.component";
-import {InfoComponent} from "./info.component";
-import {PersonComponent} from "./person.component";
+//custom resuable services
+import { CalService } from "./cal.service";
+import { QuoteSupplierService } from "./quote-supplier.service";
+import { QuoteService } from "./quote.service";
+import { HindiQuoteService } from "./hindi-quote.service";
+import { TimeService } from "./time.service";
 
-import {AppComponent} from "./app.component";
-import {HeaderComponent} from "./header.component";
-import {FooterComponent} from "./footer.component";
-import {CarComponent} from "./car.component";
-import {MovieComponent} from "./movie.component";
-import {CityComponent} from "./city.component";
-import {CalComponent} from "./cal.component";
-import {WeatherComponent} from "./weather.component";
-import {DashboardComponent} from "./dashboard.component";
 
+import { TeamComponent } from './team.component';
+import { CricketComponent } from './cricket.component';
+import { CalComponent } from './cal.component';
+import { FunComponent } from './fun.component';
 
 
 @NgModule({
-	imports : [BrowserModule,FormsModule],
-	declarations:[
-		HeaderComponent,
-		FooterComponent,
-		MovieComponent,
-		CarComponent,
-		AppComponent,
-		PersonComponent,
-		InfoComponent,
-		HelloComponent,
-		CityComponent,
-		CalComponent,
-		DashboardComponent,
-		WeatherComponent
-	],
-	//bootstrap : [HeaderComponent,AppComponent,FooterComponent]
-	bootstrap : [DashboardComponent]
+  imports: [
+    FormsModule,
+    BrowserModule
+  ],
+  providers: [
+    CalService, 
+    QuoteSupplierService,
+    QuoteService,
+    //{ provide : 'quoteService', useClass:QuoteService},
+    { provide : 'quoteService', useClass:HindiQuoteService},
+    //TimeService,
+    { provide : 'favouriteColor', useValue : 'Black' },
+    { provide : 'favouriteFood', useValue : 'Mutton Masala' },
+  ],
+  declarations: [
+    CricketComponent,
+    TeamComponent,
+    CalComponent,
+    FunComponent 
+  ],
+  bootstrap: [FunComponent]
 })
-export class AppModule {
-
-	constructor() {
-		console.log("Inside AppModule constructor!!!!");
-	}
-
+export class AppModule { 
+	
 }
