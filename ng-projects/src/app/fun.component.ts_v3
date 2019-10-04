@@ -1,0 +1,94 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app',
+  template: `<section>
+		<h2 *ngIf='false'>I am the boss</h2>
+		<h2 [hidden]='true'>I am the boss</h2>
+		<h2 *ngIf='0'>I am the boss</h2>
+		<h2 *ngIf="''">I am the boss</h2>
+		<h2 *ngIf='boss'>I am the boss</h2>
+
+		<h2 *ngIf='age <= 20'>You are Young.</h2>
+		<h2 *ngIf='age > 20'>Your are Old.</h2>
+
+		<h2 *ngIf='age <= 20 && balance >= 40000.00'>You are Young and Rich</h2>
+
+		<h2 *ngIf='age <= 20 && balance >= 40000.00'>You are Young and Rich</h2>
+
+		<div *ngIf="picnic=='Shimla' then template0 else template1">Lets enjoy the picnic.</div>
+
+		<ng-template #template0>
+			<section>
+				<h1>Holiday Destination is {{picnic}}</h1>
+				<p>Lets us plan on Sat & Sun</p>
+				<p>Lets go by Volvo</p>
+				<p>Lets us take some warm clothes</p>
+			</section>
+		</ng-template>
+
+		<ng-template #template1>
+			<section >
+				<h1>Holiday Destination is {{picnic}}</h1>
+				<p>Lets us plan on Sun Only</p>
+				<p>Lets go by Car</p>
+				<p>Lets us take some foos with us</p>
+			</section>
+		</ng-template>
+	
+		<div [ngSwitch]="color">
+			<p *ngSwitchCase="'Blue'">Blue is cool color.</p>		
+			<p *ngSwitchCase="'Green'">Green is peace color.</p>		
+			<p *ngSwitchCase="'Yellow'">Yellow is attractive color.</p>		
+			<p *ngSwitchDefault>Color is not known.</p>		
+		</div>
+		
+		<h3>Todays To Do List</h3>
+		<ul>
+			<li *ngFor='let item of items'>
+				{{item}}
+			</li>
+		</ul>
+
+		<h3>Todays To Do List</h3>
+		<ul>
+			<li *ngFor='let item of items'>
+				<a href='api/todo/{{item}}'>{{item}}</a>
+			</li>
+		</ul>
+
+		<div ngClass='box' *ngFor='let color of colors' [ngStyle]="{'background-color':color}">
+		</div>
+
+	</section>`,
+
+	styles: [`
+
+		.box {
+			width : 70px;
+			height : 70px;
+			display : inline-block;
+			margin : 5px;
+		}	
+	`]
+})
+export class FunComponent {
+	//boss:string = 'Jaggu';
+	//boss = false;
+	age:number = 12;
+	balance:number = 50000.00;
+	//picnic:string = 'Shimla';	
+	picnic:string = 'Jaipur';
+	color:string = 'Blue';	
+
+	items:Array<string> = ['Teach Router','Give Exercise on DI','Practice on Directive','Plan for Lunch','Book Taxi'];
+
+	colors:Array<string> = ['gray','blue','tomato',
+			'purple','chocolate','pink',
+			'orange','yellow','black',
+			'green','violet','skyblue'];
+
+}
+
+	
+

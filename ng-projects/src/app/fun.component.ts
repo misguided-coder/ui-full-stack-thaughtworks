@@ -3,23 +3,28 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app',
   template: `<section>
-		<h2 *ngIf='false'>I am the boss</h2>
-		<h2 [hidden]='true'>I am the boss</h2>
-		<h2 *ngIf='0'>I am the boss</h2>
-		<h2 *ngIf="''">I am the boss</h2>
-		<h2 *ngIf='boss'>I am the boss</h2>
+		<div ngClass='box' *ngFor='let color of colors' [ngStyle]="{'background-color':color}">
+		</div>
+ 	 </section>`,
+	styles: [`
 
-		<h2 *ngIf='age <= 20'>You are Young.</h2>
-		<h2 *ngIf='age > 20'>Your are Old.</h2>
-
-		<h2 *ngIf='age <= 20 && balance >= 40000.00'>You are Young and Rich</h2>
-	
-	</section>`,
+		.box {
+			width : 70px;
+			height : 70px;
+			display : inline-block;
+			margin : 5px;
+		}	
+	`]
 })
 export class FunComponent {
-	//boss:string = 'Jaggu';
-	boss:string = false;
-	age:nubmer = 12;
-	balance:nubmer = 50000.00;
+	colors:Array<string> = [
+          'gray','blue','tomato',
+	  'purple','chocolate','pink',
+	  'orange','yellow','black',
+	  'green','violet','skyblue'
+        ];
 
 }
+
+	
+

@@ -1,0 +1,56 @@
+import {Component} from "@angular/core";
+import {Observable} from "rxjs";
+
+@Component({
+	selector:'app',
+	template:`<section>
+			<h1>{{title}}</h1>
+			<hr/>			
+		</section>`
+})
+export class ReactiveComponent {
+
+	title = 'Simple Reactive Component';
+
+	constructor () {
+		let observable = Observable.create((observer)=>{
+			observer.next('Cricket Match is about to start.');					
+			observer.next('Cricket Match will start in 5 minutes.');					
+			observer.next('Cricket Match started at 12 AM.');					
+			
+			//observer.complete();					
+			setInterval(()=>{
+				observer.next('Cricket Match about ot finish.');					
+			},2000);
+		});
+
+		console.log("observable is ready!!!!!");
+
+		//Subscriber 1
+		observable.subscribe(this.createChart);		
+
+		//Subscriber 2
+		observable.subscribe(this.createTable);		
+
+		//Subscriber 3
+		observable.subscribe(this.createList);		
+
+		console.log("observers registered!!!!!");
+	}	
+
+	//Observer 1
+	createChart(state) {
+		console.log(`Chart : ${state}`);
+	}
+
+	//Observer 2
+	createTable(state) {
+		console.log(`Table : ${state}`);
+	}
+
+	//Observer 3
+	createList(state) {
+		console.log(`List : ${state}`);
+	}
+
+}

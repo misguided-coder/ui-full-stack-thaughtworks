@@ -1,0 +1,61 @@
+[
+    {
+             "id": 1001,
+             "name": "sahil chhabra",
+             "phone": 9136191860,
+             "email": "sahilchhabra019@gmail.com",
+              "address": {
+                 "houseNo": "216 A",
+                 "society": "Green Fields Apartment",
+                 "street": "Zakir Hussain Marg",
+                 "city": "Faridabad",
+                 "state": "Haryana",
+                 "country": "India"
+             }
+     },
+     {
+            "id": 1002,
+            "name": "Ram sharma",
+            "phone": 9718605999,
+            "email": "ram121@gmail.com",
+            "address":
+            {
+                "houseNo": "215 B",
+                "society": "Valley Apartment",
+                "street": "Gandhi Marg",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India"
+            }
+       } ,
+       {
+            "id": 1003,
+            "name": "Pankaj Tiwari",
+            "phone": 9999101078,
+            "email": "pankaj@gmail.com",
+            "address":
+            {
+                "houseNo": "222",
+                "society": "Worldview society",
+                "street": "Andrew Road",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India"
+            }
+        },
+        {
+            "id": 1004,
+            "name": "Abdul Sheikh",
+            "phone": 8047192860,
+            "email": "abdul019@yahoo.in",
+            "address":
+            {
+                "houseNo": "1930-1",
+                "society": "Tara Apartment",
+                "street": "Mandir Road Kalkaji",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India"
+            }
+        }
+]

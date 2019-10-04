@@ -1,0 +1,15 @@
+{
+  "name": "customer-order",
+  "version": "1.0.0",
+  "description": "REST API for managing customers and their orders",
+  "keywords": [
+    "rest",
+    "API",
+    "services"
+  ],
+  "author": "Ritesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,17 +1,9 @@
-import { Component } from "@angular/core";
-
-import { CalService } from "./cal.service";
-import { QuoteService } from "./quote.service";
-import { TimeService } from "./time.service";
+import {Component} from "@angular/core";
 
 @Component({
 	selector:'app',
 	template:`<section>
-			<header>
-				<h1>{{title}}</h1>
-				<p>{{currentQuote}}</p>
-				<p>Current Time : {{currentTime}}</p>
-			</header>
+			<h1>{{title}}</h1>
 			<label for='txt0'>Enter Number : </label>
 			<input type='number' [(ngModel)]='firstValue' id='txt0'  /><br/>
 			<label for='txt1'>Enter Number : </label>
@@ -28,23 +20,16 @@ export class CalComponent {
 	firstValue:number = 20;
 	secondValue:number = 10;
 	result:number = 30;
-	currentQuote:string;
-	currentTime:string;
 
-	constructor(private calService:CalService,private quoteService:QuoteService,private timeService:TimeService) {	
-		console.log('Inside CalComponent constructor()!!!');
-	}
-
-	//event handlers
 	doSum() {
-		console.log('Inside CalComponent doSum()!!!');
-		this.result = this.calService.sum(this.firstValue,this.secondValue); ///delegating call to business service
+		console.log('Doing sum!!!');
+		this.result =  this.firstValue + this.secondValue;
 	}
 
-	//event handlers
 	doDiff() {
-		console.log('Inside CalComponent doDiff()!!!');
-		this.result = this.calService.diff(this.firstValue,this.secondValue); ///delegating call to business service
+		console.log('Doing diff!!!');
+		this.result =  this.firstValue - this.secondValue;
 	}
 	
+		
 }

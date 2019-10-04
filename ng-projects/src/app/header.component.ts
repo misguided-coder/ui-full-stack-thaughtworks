@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
 	selector : 'page-header',
-	template : `<header class='header'>
+	template: `<header class='header'>
 			<h1 class='header__title'>Holiday Planner Application</h1>
 		</header>`,
 	styles : [`
