@@ -22,9 +22,7 @@ import {ColorBoxComponent } from "./color-box.component";
 import { CustomerComponent } from "./customer.component";
 import { ReactiveComponent } from "./reactive.component";
 import { SampleComponent } from "./sample.component";
- 
-
-
+import { CustomerFormComponent } from "./customer-form.component";
 
 
 @NgModule({
@@ -47,10 +45,11 @@ import { SampleComponent } from "./sample.component";
 		ColorBoxComponent,
 		CustomerComponent,
 		ReactiveComponent,
-		SampleComponent
+		SampleComponent,
+		CustomerFormComponent 
 	],
 	//bootstrap : [HeaderComponent,AppComponent,FooterComponent]
-	bootstrap : [SampleComponent]
+	bootstrap : [CustomerFormComponent ]
 })
 export class AppModule {
 

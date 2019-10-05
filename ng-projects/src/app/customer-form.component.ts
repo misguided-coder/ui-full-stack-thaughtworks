@@ -1,0 +1,44 @@
+import {Component} from "@angular/core";
+import {NgForm} from "@angular/forms";
+
+@Component({
+	selector:'app',
+	template:`<form class='form-group' novalidate (ngSubmit)='customerForm.valid && formSubmitted(customerForm.value);' name="custForm" #customerForm="ngForm">
+			<h1>Customer Entry Form</h1>
+			<div class='form-control'>
+				<label for='firstName'>First Name : </label>
+				<input type='text' [(ngModel)]='firstName' id='firstName' name='firstName' #first="ngModel" required minlength=3 maxlength=8  /><br/>
+				<div class='error' *ngIf="(first.touched || first.dirty) &&  first.invalid">
+					<div class='danger' *ngIf="first.errors.required">First Name is rquired!!</div>				
+					<div *ngIf="first.errors.minlength">First Name should have at least 2 characters!!</div>				
+					<div *ngIf="first.errors.maxlength">First Name can not exceed more then 8 characters!!</div>				
+				</div>
+			</div>
+			<label for='lastName'>Last Name : </label>
+			<input type='text' [(ngModel)]='lastName' id='firstName' name='lastName' #last="ngModel"  /><br/>
+			<input type='submit' value='Save'  /><br/>
+			<hr/>			
+			<h1>Form Data : {{customerForm.value}}</h1>
+			<h1>Form Data : {{message}}</h1>
+			<h1>Form Status : {{customerForm.valid}}</h1>
+		</form>`,
+	styles:[`
+		.error {
+		 	color : red;
+		}
+		.danger {
+
+		}		
+	`]
+})
+export class CustomerFormComponent {
+
+	firstName:string = 'Rohan';
+	lastName:string = 'Kumar';
+	message:string;	
+
+
+	formSubmitted(data) {
+		this.message = JSON.stringify(data);	
+	}
+}
