@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {FormGroup,FormControl,Validators} from "@angular/forms";
+import {Component, OnInit} from "@angular/core";
+import {FormBuilder,FormGroup,FormControl,Validators} from "@angular/forms";
 
 //reactive form/model drivern forms
 @Component({
@@ -38,7 +38,7 @@ import {FormGroup,FormControl,Validators} from "@angular/forms";
 			<h1>Form Status : {{custForm.status}}</h1>
 		</form>`
 })
-export class CustomerFormComponent {
+export class CustomerFormComponent implements OnInit {
 
 	//UI model
 	custForm:FormGroup;
@@ -46,23 +46,23 @@ export class CustomerFormComponent {
 	//Business model
 	customer:Customer = new Customer();
 	
-	constructor() {
-		this.custForm = new FormGroup({
-			firstName : new FormControl('',{
-				validators : [Validators.required,Validators.minLength(4),Validators.maxLength(10)]
-			}),
-			lastName : new FormControl('',{
-				validators : [Validators.required,Validators.minLength(4),Validators.maxLength(6)]
-			}),
-			email : new FormControl('',{
-				validators : [Validators.required,Validators.email]
-			}),
-			phone : new FormControl('',{
-				validators : [Validators.required,Validators.maxLength(10)]
-			})
-		});
+	constructor(private builder:FormBuilder) {
+	}
 
-		this.custForm.patchValue(this.customer);
+
+	ngOnInit() {
+		this.createForm();
+	}		
+
+	createForm() {
+		this.custForm = this.builder.group({
+			  firstName : ['', Validators.required,Validators.minLength(4),Validators.maxLength(10)],
+			  lastName : ['', Validators.required,Validators.minLength(4),Validators.maxLength(6)],
+			  email : ['', Validators.required,Validators.email],
+			  phone : ['', Validators.required]
+		});
+	
+		this.custForm.setValue(this.customer);
 	}
 
 	formSubmitted(data) {
@@ -74,8 +74,8 @@ export class CustomerFormComponent {
 //Business Models
 class Customer {
 	constructor(
-		public firstName:string = 'Raj',
-		public lastName:string = 'Malhotra',
+		public firstName:string = 'Raju',
+		public lastName:string = 'Singh',
 		public email:string = 'raj@gmail.com',
 		public phone:string = '981000000',
 	){}	

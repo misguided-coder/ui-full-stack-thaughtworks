@@ -1,0 +1,29 @@
+import { Component } from "@angular/core";
+
+@Component({
+	selector:'app',
+	template:`<section>
+			<h1>{{ title }}</h1>
+			<ul>
+				<li *ngFor="let car of cars | filterByName:'Aud'">
+					{{car}}
+				</li>
+			</ul>
+		</section>`
+})
+export class CarListComponent {
+
+	title = 'Beautiful and Luxury Cars';
+	cars:string[] = [
+		'Audi A5',
+		'Audi A2',
+		'Audi Q7',
+		'Audi Q5',
+		'BMW X1',
+		'BMW X6',		
+		'BMW X5',		
+		'Jaguar XE',
+		'Jaguar XF',
+		'Jaguar XZ',
+	];
+}

@@ -1,6 +1,11 @@
 import {Component} from "@angular/core";
 
-@Component({template:'<h1>Hello to All</h1>',selector:'app'})
+@Component({
+	selector:'app',
+	template:`<section>
+		<h1 box>Hello to All</h1>
+	</section>`
+})
 export class HelloComponent {
 
 }

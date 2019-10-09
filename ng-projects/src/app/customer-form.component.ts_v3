@@ -48,21 +48,19 @@ export class CustomerFormComponent {
 	
 	constructor() {
 		this.custForm = new FormGroup({
-			firstName : new FormControl('',{
+			firstName : new FormControl(this.customer.firstName,{
 				validators : [Validators.required,Validators.minLength(4),Validators.maxLength(10)]
 			}),
-			lastName : new FormControl('',{
+			lastName : new FormControl(this.customer.lastName,{
 				validators : [Validators.required,Validators.minLength(4),Validators.maxLength(6)]
 			}),
-			email : new FormControl('',{
+			email : new FormControl(this.customer.email,{
 				validators : [Validators.required,Validators.email]
 			}),
-			phone : new FormControl('',{
+			phone : new FormControl(this.customer.phone,{
 				validators : [Validators.required,Validators.maxLength(10)]
 			})
 		});
-
-		this.custForm.patchValue(this.customer);
 	}
 
 	formSubmitted(data) {

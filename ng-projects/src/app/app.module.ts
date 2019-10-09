@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
+import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 
 import {HelloComponent} from "./hello.component";
@@ -23,11 +23,27 @@ import { CustomerComponent } from "./customer.component";
 import { ReactiveComponent } from "./reactive.component";
 import { SampleComponent } from "./sample.component";
 import { CustomerFormComponent } from "./customer-form.component";
+import { SongComponent } from "./song.component";
+import { SongListComponent } from "./song-list.component";
+import { CarListComponent } from "./car-list.component";
 
+//Application specific pipes
+import { InitialsPipe } from "./initials.pipe";
+import { SqrtPipe } from "./sqrt.pipe";
+import { CarFilterPipe } from "./car-filter.pipe";
+
+//Application specific directives
+import { BoxDirective } from "./box.directive";
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
+import { EchoPipe } from './echo.pipe';
 
 @NgModule({
-	imports : [BrowserModule,FormsModule,HttpClientModule],
+	imports : [BrowserModule,FormsModule,ReactiveFormsModule,HttpClientModule],
 	declarations:[
+		BoxDirective, 
+		InitialsPipe,
+		SqrtPipe,
+		CarFilterPipe,
 		HeaderComponent,
 		FooterComponent,
 		MovieComponent,
@@ -46,10 +62,15 @@ import { CustomerFormComponent } from "./customer-form.component";
 		CustomerComponent,
 		ReactiveComponent,
 		SampleComponent,
-		CustomerFormComponent 
+		CustomerFormComponent,
+		SongComponent,
+		SongListComponent,
+		CarListComponent,
+		CustomerHomeComponent,
+		EchoPipe 
 	],
 	//bootstrap : [HeaderComponent,AppComponent,FooterComponent]
-	bootstrap : [CustomerFormComponent ]
+	bootstrap : [ CustomerFormComponent  ]
 })
 export class AppModule {
 
